@@ -5,3 +5,10 @@
 .DS_Store
 Thumbs.db
 *.swp
+
+# Wrangler / Cloudflare Workers local files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
