@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moma Punkin's Place — Southern Soul Food &amp; Catering · Greensboro, GA</title>
+  <meta name="description" content="Southern soul food and catering in Greensboro, Georgia. Fried chicken, smothered pork chops, oxtails, collards, yams, banana pudding. Dine in, take out, or let us cook for your event." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-name">Moma Punkin's Place</span>
+        <span class="brand-sub">Greensboro, Georgia</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="catering.html">Catering</a>
+        <a href="visit.html">Visit</a>
+      </nav>
+      <a class="nav-cta" href="catering.html#inquire">Book catering</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1. Welcome masthead -->
+    <section class="masthead">
+      <div class="container masthead-inner">
+        <span class="eyebrow">Greensboro, Georgia</span>
+        <h1>Moma Punkin's Place</h1>
+        <p class="lede">Southern food the way it's supposed to taste. Dine in, take out, or let us cook for your people.</p>
+        <div class="masthead-actions">
+          <a class="btn btn-gold" href="menu.html">See menu</a>
+          <a class="btn btn-brick" href="catering.html#inquire">Book catering</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. The daily table -->
+    <section class="daily-table">
+      <div class="container">
+        <div class="daily-table-head">
+          <span class="eyebrow">The kitchen</span>
+          <h2>What's on the table today.</h2>
+        </div>
+        <div class="table-cols">
+          <div class="table-col">
+            <h3>Meats</h3>
+            <ul>
+              <li>Fried chicken</li>
+              <li>Smothered pork chop</li>
+              <li>Oxtails</li>
+              <li>Baked chicken &amp; gravy</li>
+              <li>Meatloaf</li>
+              <li>Fried whiting</li>
+              <li>Turkey wings</li>
+              <li>Neckbones</li>
+            </ul>
+          </div>
+          <div class="table-col">
+            <h3>Vegetables</h3>
+            <ul>
+              <li>Collard greens</li>
+              <li>Candied yams</li>
+              <li>Black-eyed peas</li>
+              <li>Green beans &amp; potatoes</li>
+              <li>Butter beans</li>
+              <li>Okra &amp; tomatoes</li>
+              <li>Fried cabbage</li>
+            </ul>
+          </div>
+          <div class="table-col">
+            <h3>Sweets &amp; Sides</h3>
+            <ul>
+              <li>Macaroni and cheese</li>
+              <li>Dressing &amp; gravy</li>
+              <li>Cornbread</li>
+              <li>Banana pudding</li>
+              <li>Peach cobbler</li>
+              <li>Sweet potato pie</li>
+              <li>Pound cake</li>
+            </ul>
+          </div>
+        </div>
+        <p class="daily-note">The plate changes with the day. Call ahead if there's something you're after.</p>
+      </div>
+    </section>
+
+    <!-- 3. Catering (signature) -->
+    <section class="catering-band" id="catering">
+      <div class="container catering-inner">
+        <div class="catering-copy">
+          <span class="eyebrow eyebrow-light">Catering</span>
+          <h2>Let us cook for your people.</h2>
+          <p>Weddings, reunions, church dinners, repast, office lunches, graduations, birthdays. We bring the big pans and the paper plates, or the chafing dishes and a real set-up &mdash; whatever the day calls for.</p>
+          <p>Give us a couple of days' notice and a head count, and we'll take care of the rest. Pickup, drop-off, or full service. Ten people or a hundred and fifty.</p>
+        </div>
+        <form class="inquiry-form" onsubmit="event.preventDefault(); alert('Thank you. We\'ll be in touch within one business day to talk about your event.'); this.reset();" aria-label="Catering inquiry">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" />
+          </div>
+          <div class="inquiry-row">
+            <div class="field">
+              <label for="date">Event date</label>
+              <input id="date" name="date" type="date" required />
+            </div>
+            <div class="field">
+              <label for="guests">Guest count</label>
+              <input id="guests" name="guests" type="number" min="10" placeholder="e.g. 40" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="msg">Tell us about the event</label>
+            <textarea id="msg" name="message" placeholder="Occasion, location, any dishes you have in mind."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold">Request a quote</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 4. Address & Hours strip -->
+    <section class="info-strip">
+      <div class="container info-strip-inner">
+        <div class="info-col">
+          <div class="info-label">Address</div>
+          <div class="info-value">
+            $ &mdash; street address<br />
+            Greensboro, GA 30642
+          </div>
+        </div>
+        <div class="info-col">
+          <div class="info-label">Hours</div>
+          <div class="info-value">
+            Tue&ndash;Sat · 11 am&ndash;8 pm<br />
+            Sun · 11:30 am&ndash;6 pm<br />
+            Closed Monday
+          </div>
+        </div>
+        <div class="info-col">
+          <div class="info-label">Phone</div>
+          <div class="info-value">
+            <a href="tel:+10000000000">$ &mdash; phone</a><br />
+            <a href="mailto:hello@momapunkinsplace.com">hello@momapunkinsplace.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="brand-footer">
+          <span class="brand-name">Moma Punkin's Place</span>
+          <div class="brand-sub">Greensboro, Georgia</div>
+          <p class="footer-tagline">Southern food the way it's supposed to taste.</p>
+          <p>Family-run soul food kitchen and caterer. Dine in, take out, or let us cook for your people.</p>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <p>
+            $ &mdash; street address<br />
+            Greensboro, GA 30642<br />
+            <a href="tel:+10000000000" style="color: var(--accent);">$ &mdash; phone</a><br />
+            <a href="mailto:hello@momapunkinsplace.com" style="color: var(--accent);">hello@momapunkinsplace.com</a>
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="visit.html">Visit</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Book</h4>
+          <ul class="footer-links">
+            <li><a href="catering.html#inquire">Catering inquiry</a></li>
+            <li><a href="tel:+10000000000">Call the kitchen</a></li>
+            <li><a href="mailto:hello@momapunkinsplace.com">Email us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Moma Punkin's Place. All rights reserved.</span>
+        <span>Site by <a href="#">ZMD TECH</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hunt for Details — Mobile Detailing, Ceramic Coating & Paint Correction in Athens, GA</title>
+  <meta name="description" content="Hunt for Details is a mobile detailing studio in Athens, Georgia specializing in ceramic coating, paint correction, and obsessive interior work. Request a real quote and we come to you." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Archivo:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-name">Hunt<span class="dot">.</span> for Details</span>
+        <span class="brand-sub">Mobile Detailing · Athens, GA · Est. 2021</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="visit.html">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#quote">Get a quote</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1. MASTHEAD -->
+    <section class="masthead">
+      <div class="container masthead-inner">
+        <div class="masthead-eyebrow">
+          <span class="tick" aria-hidden="true"></span>
+          <span class="eyebrow">Athens, Georgia &middot; Mobile Detailing</span>
+        </div>
+        <h1 class="masthead-headline">
+          <span class="line">Detail</span>
+          <span class="line">Every Inch<span class="accent-dot" aria-hidden="true"></span></span>
+        </h1>
+        <p class="masthead-lede">Ceramic coating, paint correction, and obsessive interior work. We come to you with water, power, and the full kit &mdash; Athens driveways, Oconee shops, downtown parking decks.</p>
+        <div class="masthead-meta">
+          <span>Justin Hunt, Owner</span>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href="tel:+17708338102">(770) 833-8102</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span>By appointment</span>
+          <span class="sep" aria-hidden="true">/</span>
+          <span>Fully insured</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. QUOTE REQUEST — signature hero section -->
+    <section class="quote-section" id="quote">
+      <div class="container quote-wrap">
+
+        <div class="quote-intro">
+          <span class="eyebrow">Get a Real Quote</span>
+          <h2>Tell us about your <span class="accent-underline">vehicle.</span></h2>
+          <p class="quote-intro-body">No ballpark. No bait. Send a few photos and the condition you're working with &mdash; we'll come back with a fixed number, a timeline, and honest notes on what the paint actually needs.</p>
+
+          <ul class="quote-intro-points">
+            <li>
+              <span class="num">01</span>
+              <span>Fill out the form. Photos help us quote accurately the first time.</span>
+            </li>
+            <li>
+              <span class="num">02</span>
+              <span>We reply within 24 hours with a fixed quote and available dates.</span>
+            </li>
+            <li>
+              <span class="num">03</span>
+              <span>We arrive fully self-contained. You get your day back.</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="quote-form" onsubmit="event.preventDefault(); alert('Thanks \u2014 we\u2019ll reply within 24 hours with a fixed quote.'); this.reset();" novalidate>
+          <div class="form-grid">
+
+            <div class="form-field">
+              <label for="qf-name">Your Name</label>
+              <input id="qf-name" name="name" type="text" placeholder="First and last" required />
+            </div>
+
+            <div class="form-field">
+              <label for="qf-phone">Phone</label>
+              <input id="qf-phone" name="phone" type="tel" placeholder="(###) ###-####" />
+            </div>
+
+            <div class="form-field">
+              <label for="qf-email">Email</label>
+              <input id="qf-email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="form-field">
+              <label for="qf-vehicle">Vehicle (year / make / model)</label>
+              <input id="qf-vehicle" name="vehicle" type="text" placeholder="2022 Porsche 911" required />
+            </div>
+
+            <div class="form-field">
+              <label for="qf-service">Service Interested In</label>
+              <select id="qf-service" name="service" required>
+                <option value="">Select one&hellip;</option>
+                <option>Ceramic Coating</option>
+                <option>Paint Correction</option>
+                <option>Full Detail (Interior &amp; Exterior)</option>
+                <option>Interior Only</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="qf-photos">Upload Photos</label>
+              <input id="qf-photos" name="photos" type="file" multiple accept="image/*" />
+            </div>
+
+            <div class="form-field full">
+              <label for="qf-details">Details</label>
+              <textarea id="qf-details" name="details" placeholder="Current condition, any swirls or scratches you know about, preferred dates, where the car will be parked&hellip;"></textarea>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn btn-primary btn-block">Request a Quote</button>
+              <span class="form-note">Response within 24 hours. Mon&ndash;Fri, Athens time.</span>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- 3. SERVICES CASCADE -->
+    <section class="services-cascade">
+      <div class="container">
+        <div class="services-head">
+          <div>
+            <span class="eyebrow">What We Do</span>
+            <h2>Services.</h2>
+          </div>
+          <p class="services-head-right">Five core services. Every job hand-quoted after a photo review &mdash; the numbers below are starting points for sedans in typical condition.</p>
+        </div>
+
+        <ul class="cascade-list">
+
+          <li class="cascade-row">
+            <div>
+              <div class="cascade-num">01 &mdash; Paint Protection</div>
+              <div class="cascade-name">Ceramic Coating</div>
+            </div>
+            <p class="cascade-desc">Multi-year paint protection. Full decontamination, single-stage polish, and a professional-grade ceramic layer that locks in gloss and makes everything after easier.</p>
+            <div class="cascade-price"><span class="from">From</span>$900</div>
+          </li>
+
+          <li class="cascade-row">
+            <div>
+              <div class="cascade-num">02 &mdash; Finish Restoration</div>
+              <div class="cascade-name">Paint Correction</div>
+            </div>
+            <p class="cascade-desc">Swirls, wash marks, light scratches, etching. Measured with a paint gauge and removed with a machine polish &mdash; one-stage or two-stage depending on what the paint can take.</p>
+            <div class="cascade-price"><span class="from">From</span>$600</div>
+          </li>
+
+          <li class="cascade-row">
+            <div>
+              <div class="cascade-num">03 &mdash; Inside &amp; Out</div>
+              <div class="cascade-name">Full Detail</div>
+            </div>
+            <p class="cascade-desc">Foam hand wash, wheels and wheel wells, decontamination, full interior vacuum and steam, leather condition, glass, door jambs &mdash; the complete reset in a single visit.</p>
+            <div class="cascade-price"><span class="from">From</span>$250</div>
+          </li>
+
+          <li class="cascade-row">
+            <div>
+              <div class="cascade-num">04 &mdash; Cabins &amp; Carpets</div>
+              <div class="cascade-name">Interior Deep Clean</div>
+            </div>
+            <p class="cascade-desc">Hot-water carpet extraction, upholstery shampoo, headliner safe-clean, leather condition, odor neutralization. Lived-in family cars and post-pet interiors welcome.</p>
+            <div class="cascade-price"><span class="from">From</span>$200</div>
+          </li>
+
+          <li class="cascade-row">
+            <div>
+              <div class="cascade-num">05 &mdash; The Extras</div>
+              <div class="cascade-name">Restoration &amp; Add-Ons</div>
+            </div>
+            <p class="cascade-desc">Headlight restoration, waterspot and etching removal, touch-up work, engine bay detail, and cosmetic restoration on older or unique vehicles. Quoted on condition.</p>
+            <div class="cascade-price"><span class="from">From</span>$ &mdash;</div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. TRUST BAND -->
+    <section class="trust-band">
+      <div class="container trust-grid">
+        <div class="trust-stat">
+          <div class="trust-num">1,200<span class="plus">+</span></div>
+          <div class="trust-label">Vehicles Detailed</div>
+        </div>
+        <div class="trust-stat">
+          <div class="trust-num">5<span class="plus">+</span></div>
+          <div class="trust-label">Years in Athens</div>
+        </div>
+        <div class="trust-stat">
+          <div class="trust-num">Certified</div>
+          <div class="trust-label">Coating Installer</div>
+        </div>
+        <div class="trust-stat">
+          <div class="trust-num">Fully</div>
+          <div class="trust-label">Licensed &amp; Insured</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="brand-footer">
+          <span class="brand-name">Hunt<span style="color: var(--accent);">.</span> for Details</span>
+          <div class="brand-sub">Mobile Detailing · Athens, GA · Est. 2021</div>
+          <p class="footer-tagline">Detailing for people who notice.</p>
+          <p class="footer-blurb">Owner-operated mobile detailing run by Justin Hunt. Ceramic coating, paint correction, and interior restoration across Athens and Oconee counties.</p>
+        </div>
+
+        <div>
+          <h4>Studio</h4>
+          <p class="footer-contact-line">184 Collins Industrial Blvd</p>
+          <p class="footer-contact-line">Suite H, Athens, GA 30601</p>
+          <p class="footer-contact-line"><a href="tel:+17708338102">(770) 833-8102</a></p>
+          <p class="footer-contact-line">Mon&ndash;Fri, 9a&ndash;6p</p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="visit.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Elsewhere</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.huntfordetails.com" target="_blank" rel="noopener">Official site &#8599;</a></li>
+            <li><a href="https://www.facebook.com/HuntforDetails/" target="_blank" rel="noopener">Facebook &#8599;</a></li>
+            <li><a href="#quote">Request a quote</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Hunt for Details. All rights reserved.</span>
+        <span>Site by <a href="#">ZMD TECH</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

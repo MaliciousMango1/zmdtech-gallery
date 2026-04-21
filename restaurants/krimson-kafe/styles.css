@@ -1,0 +1,907 @@
+/* =========================================================
+   Krimson Kafe — Watkinsville, GA
+   Warm small-town cafe. Lunch in, cake to go.
+   Signature: two-sided split hero (Dine in / Take one home).
+   ========================================================= */
+
+:root {
+  /* Palette — cream / crimson / olive / honey */
+  --bg: #f7f0e3;
+  --surface: #ffffff;
+  --surface-2: #ebe0c8;
+  --text: #22130f;
+  --text-soft: #3f2822;
+  --muted: #8a756a;
+  --accent: #a52028;
+  --accent-deep: #7a161c;
+  --accent-2: #5d6b3c;
+  --accent-3: #c99844;
+  --border: #dbceb0;
+  --border-strong: #b2a478;
+
+  /* Type */
+  --font-display: "Young Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Epilogue", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius: 10px;
+  --radius-lg: 18px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+  width: min(1200px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.container-narrow {
+  width: min(880px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+/* -----------------------
+   Typography
+   ----------------------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+  letter-spacing: -0.005em;
+}
+
+h1 { font-size: clamp(2.4rem, 5.8vw, 4.4rem); }
+h2 { font-size: clamp(1.9rem, 4.2vw, 3rem); }
+h3 { font-size: 1.45rem; }
+h4 { font-size: 1.05rem; }
+
+p { color: var(--text-soft); }
+.muted { color: var(--muted); }
+
+.eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+.eyebrow.light { color: var(--accent-3); }
+.eyebrow.cream { color: #f7f0e3; }
+
+.italic-lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.inline-link {
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-strong);
+  padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.inline-link:hover { color: var(--accent-deep); border-bottom-color: var(--accent); }
+
+.inline-link.cream {
+  color: #f7f0e3;
+  border-bottom-color: rgba(247, 240, 227, 0.5);
+}
+.inline-link.cream:hover { color: #ffffff; border-bottom-color: #ffffff; }
+
+/* -----------------------
+   Header / Nav
+   ----------------------- */
+.site-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.15rem 0;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+
+.brand-sub {
+  font-size: 0.66rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin-top: 6px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.nav-links a {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.2rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.nav-cta:hover { background: var(--accent-deep); transform: translateY(-1px); }
+
+/* -----------------------
+   Buttons
+   ----------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--accent-deep); transform: translateY(-1px); }
+
+.btn-cream {
+  background: var(--bg);
+  color: var(--accent-deep);
+}
+.btn-cream:hover { background: #fff; transform: translateY(-1px); }
+
+.btn-outline-cream {
+  background: transparent;
+  color: var(--bg);
+  border-color: rgba(247, 240, 227, 0.6);
+}
+.btn-outline-cream:hover { border-color: var(--bg); background: rgba(247, 240, 227, 0.1); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+.btn-outline:hover { border-color: var(--text); }
+
+/* =========================================================
+   HOMEPAGE — Masthead + Two-Sided Split Hero
+   ========================================================= */
+
+/* 1. Masthead */
+.masthead {
+  padding: 3.5rem 0 2.5rem;
+  text-align: center;
+}
+
+.masthead-eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.masthead-headline {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 8vw, 6rem);
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.2rem;
+}
+
+.masthead-lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  color: var(--text-soft);
+  max-width: 38ch;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* 2. Two-sided hero band — THE signature */
+.split-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  min-height: 560px;
+}
+
+.split-panel {
+  padding: 4.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.split-panel.dine {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.split-panel.take {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.split-panel .eyebrow {
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.split-panel h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  margin-bottom: 2rem;
+  max-width: 14ch;
+}
+
+.split-panel.take h2 { color: var(--bg); }
+
+.split-preview {
+  list-style: none;
+  margin-bottom: 2rem;
+  max-width: 32rem;
+}
+
+.split-preview li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.98rem;
+}
+.split-panel.take .split-preview li {
+  border-bottom-color: rgba(247, 240, 227, 0.2);
+}
+
+.split-preview .item-name {
+  font-weight: 500;
+  color: inherit;
+}
+.split-preview .item-desc {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 2px;
+  font-weight: 400;
+}
+.split-panel.take .split-preview .item-desc {
+  color: rgba(247, 240, 227, 0.75);
+}
+
+.split-preview .item-price {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.split-panel.take .split-preview .item-price {
+  color: var(--accent-3);
+}
+
+/* Flavor pills (right side) */
+.flavor-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  max-width: 32rem;
+}
+
+.flavor-pill {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(247, 240, 227, 0.45);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  background: rgba(93, 107, 60, 0.35);
+  color: var(--bg);
+}
+
+/* 3. Catering strip */
+.catering-strip {
+  background: var(--accent-2);
+  color: var(--bg);
+  padding: 3.5rem 0;
+  text-align: center;
+}
+
+.catering-strip .italic-lede {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.25;
+  max-width: 30ch;
+  margin: 0 auto 1.2rem;
+  color: var(--bg);
+}
+
+.catering-strip .inline-link {
+  font-family: var(--font-body);
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* 4. Visit strip — dark */
+.visit-strip {
+  background: var(--text);
+  color: var(--bg);
+  padding: 3rem 0;
+}
+
+.visit-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.visit-cell h4 {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--accent-3);
+  margin-bottom: 0.9rem;
+}
+
+.visit-cell p, .visit-cell a {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.35;
+  color: var(--bg);
+}
+.visit-cell a:hover { color: var(--accent-3); }
+
+/* =========================================================
+   INNER PAGES
+   ========================================================= */
+
+/* Page header (for non-home pages) */
+.page-header {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-header .eyebrow { display: block; margin-bottom: 0.9rem; }
+.page-header h1 {
+  font-family: var(--font-display);
+  margin-bottom: 1rem;
+  max-width: 18ch;
+  color: var(--accent);
+}
+.page-header .lede {
+  color: var(--text-soft);
+  font-size: 1.1rem;
+  max-width: 55ch;
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+section.block { padding: 4.5rem 0; }
+section.block.tight { padding: 3rem 0; }
+
+/* Menu page — categories */
+.menu-cat {
+  margin-bottom: 3.5rem;
+}
+.menu-cat:last-child { margin-bottom: 0; }
+
+.menu-cat-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.menu-cat-head h2 {
+  font-family: var(--font-display);
+  color: var(--accent);
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+}
+
+.menu-cat-head .menu-cat-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.menu-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 3rem;
+}
+
+.menu-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.menu-list .item-name {
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--text);
+  display: block;
+}
+
+.menu-list .item-desc {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 3px;
+  line-height: 1.5;
+}
+
+.menu-list .item-price {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.menu-note {
+  margin-top: 2rem;
+  padding: 1.2rem 1.4rem;
+  background: var(--surface-2);
+  border-left: 3px solid var(--accent-2);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+/* Cakes page — grid of cake cards */
+.cakes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.cake-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.cake-card:hover { transform: translateY(-3px); border-color: var(--border-strong); }
+
+.cake-card h3 {
+  font-family: var(--font-display);
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.cake-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  flex-grow: 1;
+}
+
+.cake-card .price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.4rem;
+}
+
+.cake-card .price-row .size {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.cake-card .price-row .price {
+  font-family: var(--font-display);
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+
+.cakes-order-band {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.cakes-order-band h3 {
+  font-family: var(--font-display);
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+  font-size: 1.6rem;
+}
+
+.cakes-order-band p {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.cakes-order-band .actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* Catering page */
+.catering-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.catering-copy h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.catering-copy p { margin-bottom: 1rem; color: var(--text-soft); }
+
+.catering-list {
+  list-style: none;
+  margin: 1.5rem 0;
+}
+.catering-list li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+.catering-list li:last-child { border-bottom: none; }
+.catering-list .label {
+  font-family: var(--font-display);
+  color: var(--accent);
+  min-width: 10rem;
+  font-size: 1.1rem;
+}
+.catering-list .value {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.catering-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+}
+
+.catering-form h3 {
+  font-family: var(--font-display);
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  font-size: 1.5rem;
+}
+
+.catering-form .form-hint {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: var(--text-soft);
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--bg);
+  color: var(--text);
+  transition: border-color 0.15s ease;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.form-group textarea {
+  min-height: 110px;
+  resize: vertical;
+  font-family: var(--font-body);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Visit page */
+.visit-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.visit-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+}
+
+.visit-card h3 {
+  font-family: var(--font-display);
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+}
+
+.hours-list { list-style: none; }
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+.hours-list li:last-child { border-bottom: none; }
+.hours-list .day { color: var(--muted); }
+.hours-list .time { font-weight: 500; color: var(--text); }
+.hours-list .time.closed { color: var(--accent); font-style: italic; font-weight: 400; }
+
+.contact-line {
+  display: flex;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+  align-items: baseline;
+}
+.contact-line:last-child { border-bottom: none; }
+.contact-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  font-weight: 700;
+  min-width: 70px;
+}
+.contact-value { font-weight: 500; color: var(--text); }
+.contact-value a:hover { color: var(--accent); }
+
+.map-placeholder {
+  aspect-ratio: 4 / 3;
+  background:
+    linear-gradient(135deg, rgba(165, 32, 40, 0.08), rgba(93, 107, 60, 0.08)),
+    repeating-linear-gradient(0deg, var(--surface-2) 0 1px, var(--bg) 1px 30px),
+    repeating-linear-gradient(90deg, var(--surface-2) 0 1px, var(--bg) 1px 30px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.site-footer {
+  background: var(--text);
+  color: var(--bg);
+  padding: 3.5rem 0 2rem;
+  margin-top: 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.site-footer h4 {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-3);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.footer-brand .brand-name {
+  font-family: var(--font-display);
+  color: var(--bg);
+  font-size: 1.8rem;
+}
+
+.footer-brand .brand-sub {
+  color: rgba(247, 240, 227, 0.5);
+  margin-top: 4px;
+}
+
+.footer-tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--accent-3);
+  margin: 1rem 0 1.2rem;
+  max-width: 26ch;
+}
+
+.footer-about {
+  font-size: 0.88rem;
+  color: rgba(247, 240, 227, 0.7);
+  max-width: 34ch;
+  line-height: 1.6;
+}
+
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-links a { font-size: 0.9rem; color: rgba(247, 240, 227, 0.8); }
+.footer-links a:hover { color: var(--accent-3); }
+
+.footer-contact {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: rgba(247, 240, 227, 0.8);
+}
+.footer-contact a:hover { color: var(--accent-3); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(247, 240, 227, 0.12);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: rgba(247, 240, 227, 0.55);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom a { color: rgba(247, 240, 227, 0.75); }
+.footer-bottom a:hover { color: var(--accent-3); }
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 960px) {
+  .split-hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .split-panel { padding: 3rem 1.5rem; }
+
+  .visit-strip-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .cakes-grid { grid-template-columns: repeat(2, 1fr); }
+  .catering-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .visit-page-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .cakes-order-band { grid-template-columns: 1fr; }
+  .cakes-order-band .actions { justify-content: flex-start; }
+  .menu-list { grid-template-columns: 1fr; gap: 0; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .brand-sub { display: none; }
+  .cakes-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  section.block { padding: 3rem 0; }
+  .masthead { padding: 2.5rem 0 1.8rem; }
+  .catering-list .label { min-width: 0; }
+  .catering-list li { flex-direction: column; gap: 0.3rem; }
+  .nav-cta { padding: 0.5rem 0.9rem; font-size: 0.72rem; letter-spacing: 0.14em; }
+}

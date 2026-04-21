@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Traveling Hobo Cafe — Watkinsville, Georgia</title>
+  <meta name="description" content="A neighborhood cafe on Greensboro Hwy in Watkinsville, Georgia. House-battered burgers, fried baskets, sandwiches, salads, and fresh-squeezed lemonade. Hours, directions, menu, and phone — all in one place." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Urbanist:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-name">The Traveling Hobo Cafe</span>
+        <span class="brand-sub">Watkinsville, Georgia</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="visit.html">Visit</a>
+      </nav>
+      <a class="nav-cta" href="tel:+17063104323">(706) 310-4323</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1. Compact masthead -->
+    <section class="masthead">
+      <div class="container masthead-inner">
+        <h1 class="masthead-title">The Traveling<br />Hobo <span class="amp">Cafe</span></h1>
+        <div class="masthead-meta">
+          <span class="masthead-loc">Watkinsville &middot; Georgia</span>
+          <span class="masthead-tag">Coffee&rsquo;s on. Breakfast&rsquo;s ready.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. At-a-glance band — the signature -->
+    <section class="at-a-glance">
+      <div class="container">
+
+        <div class="at-a-glance-head">
+          <span class="eyebrow">The basics</span>
+          <h2>Everything you were about to Google.</h2>
+        </div>
+
+        <div class="glance-card" role="region" aria-label="At a glance">
+
+          <!-- Block 1: Hours -->
+          <div class="glance-block">
+            <span class="glance-label">Hours</span>
+            <span class="open-pill">Open today</span>
+            <ul class="glance-hours">
+              <li><span class="day">Mon</span><span class="time closed">Closed</span></li>
+              <li><span class="day">Tue&ndash;Fri</span><span class="time">11a &ndash; 8p</span></li>
+              <li><span class="day">Sat</span><span class="time">11a &ndash; 8p</span></li>
+              <li><span class="day">Sun</span><span class="time closed">Closed</span></li>
+            </ul>
+          </div>
+
+          <!-- Block 2: Address -->
+          <div class="glance-block">
+            <span class="glance-label">Find us</span>
+            <p class="glance-address">
+              <span class="street">20 Greensboro Hwy</span><br />
+              Ste B<br />
+              Watkinsville, GA 30677
+            </p>
+            <a class="tracked-link" href="https://www.google.com/maps/search/?api=1&query=20+Greensboro+Hwy+Watkinsville+GA+30677" target="_blank" rel="noopener">Get directions &rarr;</a>
+          </div>
+
+          <!-- Block 3: Phone + nav row -->
+          <div class="glance-block">
+            <span class="glance-label">Call or browse</span>
+            <a class="glance-phone" href="tel:+17063104323">(706) 310-4323</a>
+            <div class="glance-nav-row">
+              <a href="menu.html">Menu</a>
+              <a href="menu.html#burgers">Burgers</a>
+              <a href="menu.html#baskets">Baskets</a>
+              <a href="visit.html">Visit</a>
+            </div>
+          </div>
+
+          <!-- Block 4: Popular dishes -->
+          <div class="glance-block">
+            <span class="glance-label">Popular dishes</span>
+            <ul class="glance-pop">
+              <li><span class="dish">Fried Shrimp Basket</span><span class="price">$9.95</span></li>
+              <li><span class="dish">Classic Hobo Thick Burger</span><span class="price">$8.95</span></li>
+              <li><span class="dish">Artichoke Po&rsquo; Boy</span><span class="price">$6.50</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Menu preview — inline typographic -->
+    <section class="menu-preview">
+      <div class="menu-preview-inner">
+
+        <div class="menu-preview-head">
+          <span class="eyebrow">A look at the menu</span>
+          <h2>House-battered, plate-piled, priced like a diner should be.</h2>
+        </div>
+
+        <div class="menu-list">
+
+          <article class="menu-item">
+            <span class="menu-item-name">Fried Shrimp Basket</span>
+            <span class="menu-item-price">$9.95</span>
+            <span class="menu-item-desc">House-battered shrimp, fried to order. Served with a side.</span>
+          </article>
+
+          <article class="menu-item">
+            <span class="menu-item-name">Classic Hobo Thick Burger</span>
+            <span class="menu-item-price">$8.95</span>
+            <span class="menu-item-desc">Hand-pattied and grilled. Lettuce, tomato, onion, the works.</span>
+          </article>
+
+          <article class="menu-item">
+            <span class="menu-item-name">Railroad Reuben Burger</span>
+            <span class="menu-item-price">$10.50</span>
+            <span class="menu-item-desc">Swiss, sauerkraut, Thousand Island on a house burger. Grown-up comfort.</span>
+          </article>
+
+          <article class="menu-item">
+            <span class="menu-item-name">Artichoke Po&rsquo; Boy</span>
+            <span class="menu-item-price">$6.50</span>
+            <span class="menu-item-desc">Fried artichoke hearts, lettuce, tomato, remoulade on a hoagie.</span>
+          </article>
+
+          <article class="menu-item">
+            <span class="menu-item-name">Fish &amp; Chips Hobo</span>
+            <span class="menu-item-price">$7.50+</span>
+            <span class="menu-item-desc">House-battered white fish, Box Car fries, tartar sauce, lemon.</span>
+          </article>
+
+          <article class="menu-item">
+            <span class="menu-item-name">Hobo Cobb Salad</span>
+            <span class="menu-item-price">$10.00</span>
+            <span class="menu-item-desc">Greens piled with bacon, egg, bleu cheese, tomato, and choice of protein.</span>
+          </article>
+
+          <article class="menu-item">
+            <span class="menu-item-name">Box Car Fries</span>
+            <span class="menu-item-price">$3.00</span>
+            <span class="menu-item-desc">The house side. Crisp edges, soft middles. Get them dirty for a dollar more.</span>
+          </article>
+
+          <article class="menu-item">
+            <span class="menu-item-name">Fresh-Squeezed Lemonade</span>
+            <span class="menu-item-price">$3.00</span>
+            <span class="menu-item-desc">Pressed in-house every morning. Worth the trip on its own.</span>
+          </article>
+
+        </div>
+
+        <div class="menu-preview-footer">
+          <a class="inline-link" href="menu.html">See the full menu &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Find us strip — dark band -->
+    <section class="find-us">
+      <div class="container find-us-inner">
+        <span class="eyebrow">Come find us</span>
+        <p class="find-us-line">
+          We&rsquo;re in Watkinsville, just off <span class="accent">Greensboro Highway</span> &mdash; the little place with the porch and the lemonade out front.
+        </p>
+        <div class="find-us-meta">
+          <div>
+            <strong>Address</strong>
+            20 Greensboro Hwy, Ste B<br />Watkinsville, GA 30677
+          </div>
+          <div>
+            <strong>Phone</strong>
+            <a href="tel:+17063104323">(706) 310-4323</a>
+          </div>
+          <div>
+            <strong>Directions</strong>
+            <a href="https://www.google.com/maps/search/?api=1&query=20+Greensboro+Hwy+Watkinsville+GA+30677" target="_blank" rel="noopener">Open in Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared dark footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="brand-footer">
+          <span class="brand-name">The Traveling Hobo Cafe</span>
+          <div class="brand-sub">Watkinsville &middot; Georgia</div>
+          <p class="footer-tagline">Coffee&rsquo;s on. Breakfast&rsquo;s ready.</p>
+          <p class="footer-blurb">A neighborhood fast-casual cafe on Greensboro Highway. House-battered, hand-pattied, and priced like a diner should be.</p>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <p class="footer-contact">
+            20 Greensboro Hwy, Ste B<br />
+            Watkinsville, GA 30677<br />
+            <a href="tel:+17063104323">(706) 310-4323</a>
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="visit.html">Visit</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Find us on</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.facebook.com/TravelingHoboCafe/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=20+Greensboro+Hwy+Watkinsville+GA+30677" target="_blank" rel="noopener">Google Maps</a></li>
+            <li><a href="https://www.yelp.com/biz/the-traveling-hobo-cafe-watkinsville" target="_blank" rel="noopener">Yelp</a></li>
+            <li><a href="https://www.tripadvisor.com/Restaurant_Review-g35353-d9586859-Reviews-The_Traveling_Hobo_Cafe-Watkinsville_Georgia.html" target="_blank" rel="noopener">Tripadvisor</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 The Traveling Hobo Cafe. Watkinsville, GA.</span>
+        <span>Site by <a href="#">ZMD TECH</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

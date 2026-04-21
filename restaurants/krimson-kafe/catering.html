@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catering — Krimson Kafe, Watkinsville GA</title>
+  <meta name="description" content="Catering from Krimson Kafe — bagged lunches, sandwich trays, salad bowls, pound cake boxes. Offices, family tables, and parties around Oconee County." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Epilogue:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-name">Krimson Kafe</span>
+        <span class="brand-sub">Watkinsville, GA</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="cakes.html">Cakes</a>
+        <a href="catering.html" class="active">Catering</a>
+        <a href="visit.html">Visit</a>
+      </nav>
+      <a class="nav-cta" href="https://www.krimsonkafe.com/" target="_blank" rel="noopener">Order online</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-header">
+      <div class="container">
+        <span class="eyebrow">Catering</span>
+        <h1>Feed the office. Feed the party.</h1>
+        <p class="lede">We cater small parties, office lunches, showers, and family tables around Oconee County. Drop-off trays, bagged lunches, pound cake boxes &mdash; whatever you need us to bring.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="container">
+
+        <div class="catering-grid">
+
+          <div class="catering-copy">
+            <h2>How it works</h2>
+            <p>Tell us when, how many, and what you'd like. We'll send back a quote with options and a pickup time. For bigger jobs, call ahead &mdash; we bake cakes and make chicken salad to the order, so 48 hours notice is ideal.</p>
+
+            <ul class="catering-list">
+              <li>
+                <span class="label">Bagged Lunches</span>
+                <span class="value">Sandwich, chips, cookie, bottle of water. Packed and labeled.</span>
+              </li>
+              <li>
+                <span class="label">Sandwich Trays</span>
+                <span class="value">Pimento, chicken salad, turkey, Ruben halves arranged on a tray.</span>
+              </li>
+              <li>
+                <span class="label">Salad Bowls</span>
+                <span class="value">Wyllie, Spring, or chicken salad over greens &mdash; serves ten.</span>
+              </li>
+              <li>
+                <span class="label">Soup by the Gallon</span>
+                <span class="value">Today's soup (or yours on request) packed hot with bowls and crackers.</span>
+              </li>
+              <li>
+                <span class="label">Pound Cake Boxes</span>
+                <span class="value">Mini loaves, mixed flavors, sliced and ready. Good for shower tables.</span>
+              </li>
+              <li>
+                <span class="label">Family Tables</span>
+                <span class="value">A Sunday-sized spread &mdash; sandwich platter, salad, sides, cake. Feeds twelve.</span>
+              </li>
+            </ul>
+
+            <p>Pickup from the cafe is free. Local drop-off available for orders over a small minimum &mdash; we'll quote the drive when you inquire.</p>
+          </div>
+
+          <div class="catering-form" id="inquire">
+            <h3>Catering inquiry</h3>
+            <p class="form-hint">Tell us a little and we'll follow up within a day. For anything inside 48 hours, please call <a class="inline-link" href="tel:+17063100888">(706) 310-0888</a>.</p>
+
+            <form onsubmit="event.preventDefault(); alert('Thanks — we\'ll be in touch within a day. For rush orders please call (706) 310-0888.');">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your name</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="date">Date needed</label>
+                  <input type="date" id="date" name="date" required />
+                </div>
+                <div class="form-group">
+                  <label for="count">How many?</label>
+                  <input type="number" id="count" name="count" min="1" placeholder="e.g. 15" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="type">What are you thinking?</label>
+                <select id="type" name="type">
+                  <option>Bagged lunches</option>
+                  <option>Sandwich tray</option>
+                  <option>Salad bowl</option>
+                  <option>Soup &amp; sandwiches</option>
+                  <option>Pound cake box</option>
+                  <option>Family table</option>
+                  <option>Not sure — help me figure it out</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="notes">Anything else?</label>
+                <textarea id="notes" name="notes" placeholder="Allergies, delivery address, special requests..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Send inquiry</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-name">Krimson Kafe</span>
+          <div class="brand-sub">Watkinsville, GA</div>
+          <p class="footer-tagline">Lunch in the cafe. Pound cakes by the box.</p>
+          <p class="footer-about">A warm, small-town cafe on Greensboro Highway. Simple fresh lunches weekdays, pound cakes to go, catering on request.</p>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <p class="footer-contact">
+            40 Greensboro Hwy<br />
+            Watkinsville, GA 30677<br />
+            <a href="tel:+17063100888">(706) 310-0888</a>
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="cakes.html">Cakes</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="visit.html">Visit</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Order &amp; follow</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.krimsonkafe.com/" target="_blank" rel="noopener">Order online</a></li>
+            <li><a href="https://www.facebook.com/p/The-Krimson-Kafe-100063474672987/" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Krimson Kafe. All rights reserved.</span>
+        <span>Site by <a href="#">ZMD TECH</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

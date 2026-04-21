@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catering — Ichiban Buffet, Winder GA</title>
+  <meta name="description" content="Party trays, office lunches, and family-event catering from Ichiban Buffet in Winder, GA. Sushi platters, wok entrees, noodles, and fried rice by the tray." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=DM+Sans:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-name">Ichiban Buffet</span>
+        <span class="brand-sub">Winder, Georgia</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="catering.html" class="active">Catering</a>
+        <a href="visit.html">Visit</a>
+      </nav>
+      <a class="nav-cta" href="https://ichibanbuffetga.kwickmenu.com/" target="_blank" rel="noopener">Order online</a>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">Catering</span>
+      <h1>Feed the office, the team, or the whole family.</h1>
+      <p class="lede">Sushi platters, wok trays, noodles, and fried rice &mdash; built for ten guests or two hundred.</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="block">
+      <div class="container">
+
+        <p class="catering-intro">Most orders are picked up at the restaurant. Delivery inside Winder and Auburn is on the table for larger trays &mdash; ask when you inquire. Two business days of notice is typical; one day works for smaller groups.</p>
+
+        <ul class="catering-points">
+          <li>
+            <span class="cp-label">Minimum</span>
+            <span class="cp-value">Party trays start at 10 guests</span>
+          </li>
+          <li>
+            <span class="cp-label">Notice</span>
+            <span class="cp-value">48 hours preferred</span>
+          </li>
+          <li>
+            <span class="cp-label">Pickup</span>
+            <span class="cp-value">78 E May St, Winder &mdash; ask for the catering counter</span>
+          </li>
+          <li>
+            <span class="cp-label">Delivery</span>
+            <span class="cp-value">Available for large orders in the Winder area</span>
+          </li>
+          <li>
+            <span class="cp-label">Sushi platters</span>
+            <span class="cp-value">Assorted rolls, made that morning</span>
+          </li>
+          <li>
+            <span class="cp-label">Hot trays</span>
+            <span class="cp-value">Wok entr&eacute;es, noodles, fried rice, vegetables</span>
+          </li>
+          <li>
+            <span class="cp-label">Build a menu</span>
+            <span class="cp-value">Call (678) 975-7673 to plan</span>
+          </li>
+          <li>
+            <span class="cp-label">Payment</span>
+            <span class="cp-value">Card or cash on pickup</span>
+          </li>
+        </ul>
+
+        <!-- Inquiry form -->
+        <form class="inquiry-form" onsubmit="event.preventDefault(); alert('Thanks! We will call you within one business day to confirm your order.'); this.reset();" aria-label="Catering inquiry form">
+          <h3>Start a catering order</h3>
+          <p class="sub">Tell us the basics. We&rsquo;ll call to confirm the details and total.</p>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" />
+            </div>
+            <div class="form-field">
+              <label for="guests">Guests</label>
+              <input type="number" id="guests" name="guests" min="10" placeholder="10+" required />
+            </div>
+            <div class="form-field">
+              <label for="date">Event date</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div class="form-field">
+              <label for="type">Order type</label>
+              <select id="type" name="type">
+                <option>Pickup</option>
+                <option>Delivery (Winder area)</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-field full">
+              <label for="notes">Notes &amp; tray preferences</label>
+              <textarea id="notes" name="notes" placeholder="Sushi platters, hot wok trays, dietary notes, drop-off address..."></textarea>
+            </div>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">Send inquiry</button>
+            <p class="form-note">We&rsquo;ll respond within one business day. For same-week events, call the restaurant.</p>
+          </div>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-name">Ichiban Buffet</span>
+          <div class="brand-sub">Winder, GA</div>
+          <p class="footer-tagline">Fresh sushi, hot wok, buffet pricing.</p>
+          <p class="footer-about">A family-run Japanese and Chinese buffet on East May Street in Winder. Sushi bar, hibachi line, hot wok, and a full dessert counter &mdash; all under one roof.</p>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <p class="footer-contact">
+            78 E May St, Suite A<br />
+            Winder, GA 30680<br />
+            <a href="tel:+16789757673">(678) 975-7673</a>
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="visit.html">Visit</a></li>
+            <li><a href="https://ichibanbuffetga.kwickmenu.com/" target="_blank" rel="noopener">Order online</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Hours</h4>
+          <p class="footer-contact">
+            Mon&ndash;Thu &middot; 11:00 AM &ndash; 9:30 PM<br />
+            Fri &amp; Sat &middot; 11:00 AM &ndash; 10:30 PM<br />
+            Sun &middot; 11:00 AM &ndash; 9:30 PM
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Ichiban Buffet. All rights reserved.</span>
+        <span>Site by <a href="#">ZMD TECH</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

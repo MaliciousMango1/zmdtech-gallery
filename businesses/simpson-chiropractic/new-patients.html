@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Patients — Simpson Chiropractic Wellness &amp; Weight Loss</title>
+  <meta name="description" content="What to bring, what to expect, and how to request your first appointment at Simpson Chiropractic in Athens, GA." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-name">Simpson Chiropractic</span>
+        <span class="brand-sub">Wellness &amp; Weight Loss · Athens, GA</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="new-patients.html" class="active">New Patients</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#intake">Request appointment</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-header">
+      <div class="container">
+        <span class="eyebrow">New Patients</span>
+        <h1>Start <span class="italic-display">here.</span></h1>
+        <p class="lede">First visits are mostly a conversation. Before you come in, here's what to bring, what to expect, and how to book.</p>
+      </div>
+    </section>
+
+    <!-- What to bring -->
+    <section class="np-checklist">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Before your visit</span>
+          <h2>What to bring.</h2>
+        </div>
+        <div class="checklist-grid">
+          <div class="checklist-card">
+            <h3>For your first appointment</h3>
+            <ul>
+              <li>Photo ID and your insurance card, if you plan to use insurance.</li>
+              <li>A list of current medications and supplements.</li>
+              <li>Any recent imaging, lab work, or specialist notes related to your concern.</li>
+              <li>Your completed intake form (available below or at the front desk).</li>
+              <li>Comfortable clothing — something you can move in.</li>
+            </ul>
+          </div>
+          <div class="checklist-card">
+            <h3>A few things to think about</h3>
+            <ul>
+              <li>When did the issue start? Has it changed over time?</li>
+              <li>What makes it better or worse in a typical day?</li>
+              <li>What have you already tried — and what felt like it helped?</li>
+              <li>What would "better" look like for you three months from now?</li>
+              <li>Any questions you want answered before starting care.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What to expect -->
+    <section class="np-expect">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Your first visit</span>
+          <h2>What to expect when you arrive.</h2>
+        </div>
+        <ol class="visit-walkthrough">
+          <li>
+            <span class="step-num-alt">01</span>
+            <div class="step-body">
+              <h3>Check-in and paperwork</h3>
+              <p>Plan to arrive about fifteen minutes early. If you haven't filled out intake forms yet, we'll give you a clipboard and a quiet seat.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num-alt">02</span>
+            <div class="step-body">
+              <h3>Consultation with the clinician</h3>
+              <p>A conversation — history, goals, current symptoms, lifestyle. This is where most of the useful information comes out, so there's no rush.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num-alt">03</span>
+            <div class="step-body">
+              <h3>Examination</h3>
+              <p>A hands-on exam based on what you described. We may recommend imaging or additional evaluation if it's helpful — never as a default.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num-alt">04</span>
+            <div class="step-body">
+              <h3>Findings and a plan</h3>
+              <p>We walk you through what we found and what we recommend, in plain language. You'll know what care looks like, how long it should take, and what it costs before you commit.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num-alt">05</span>
+            <div class="step-body">
+              <h3>First treatment (if appropriate)</h3>
+              <p>If it makes sense for your case and you're ready, we can begin care the same day. If not, we'll schedule what's next.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Intake form -->
+    <section class="np-form-wrap" id="intake">
+      <div class="container">
+        <form class="np-form" onsubmit="event.preventDefault(); alert('Thanks — this is a placeholder form. We\\'ll wire it to an inbox.');">
+          <h2>Request your first appointment.</h2>
+          <p class="form-intro">Fill this out and we'll get back to you the same business day. If you'd rather talk first, call <a class="inline-link" href="tel:+17065431900">(706) 543-1900</a>.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First name</label>
+              <input type="text" id="first-name" name="first-name" autocomplete="given-name" required />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last name</label>
+              <input type="text" id="last-name" name="last-name" autocomplete="family-name" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" required />
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label for="reason">What brings you in?</label>
+            <select id="reason" name="reason" required>
+              <option value="">Choose one</option>
+              <option value="chiropractic">Chiropractic — back or neck pain</option>
+              <option value="neuropathy">Neuropathy — numbness, tingling, or burning</option>
+              <option value="weight-loss">Weight loss support</option>
+              <option value="wellness">Ongoing wellness care</option>
+              <option value="injury">Injury or accident recovery</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="message">Tell us a little more (optional)</label>
+            <textarea id="message" name="message" placeholder="When did it start? What have you tried? Anything helpful for us to know ahead of time."></textarea>
+          </div>
+
+          <div class="form-group full">
+            <label for="preferred-time">Preferred day or time</label>
+            <input type="text" id="preferred-time" name="preferred-time" placeholder="e.g. Weekday mornings, or Tuesday afternoon" />
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">Send request</button>
+          </div>
+
+          <p class="form-note">By submitting, you're asking us to contact you about an appointment. We don't share your information with anyone else.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="disclaimer">
+      <div class="container disclaimer-inner">
+        This form is for appointment requests only. Do not use it to share sensitive medical details or for urgent issues. If this is an emergency, call 911 or go to the nearest emergency room.
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="brand-footer">
+          <span class="brand-name">Simpson Chiropractic</span>
+          <div class="brand-sub">Wellness &amp; Weight Loss · Athens, GA</div>
+          <p class="footer-tagline">Care for the root cause, not just the symptom.</p>
+          <p class="footer-meta">Dr. Tony Simpson has practiced in Athens for over 30 years. Chiropractic, neuropathy, weight loss, and wellness care.</p>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <p class="footer-meta">
+            700 Hawthorne Avenue<br />
+            Athens, GA 30606<br />
+            <a href="tel:+17065431900">(706) 543-1900</a>
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="new-patients.html">New Patients</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#chiropractic">Chiropractic</a></li>
+            <li><a href="services.html#neuropathy">Neuropathy</a></li>
+            <li><a href="services.html#weight-loss">Weight Loss</a></li>
+            <li><a href="services.html#wellness">Wellness</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Simpson Chiropractic Wellness &amp; Weight Loss. All rights reserved.</span>
+        <span>Site by <a href="#">ZMD TECH</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
