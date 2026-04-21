@@ -1,0 +1,932 @@
+/* =========================================================
+   Big City Bread Cafe — Athens, GA
+   Editorial artisan cafe. Dayparts, not departments.
+   ========================================================= */
+
+:root {
+  /* Palette — flour / espresso / rust / sage */
+  --bg: #f7f1e3;
+  --surface: #ffffff;
+  --surface-2: #ebe2cb;
+  --text: #2a1e17;
+  --text-soft: #4a362a;
+  --muted: #857360;
+  --accent: #b84a2e;
+  --accent-deep: #8e3820;
+  --accent-2: #6b7c4a;
+  --accent-3: #d4a574;
+  --border: #dfd2b8;
+  --border-strong: #b8a885;
+
+  /* Type */
+  --font-display: "Bodoni Moda", "DM Serif Display", Georgia, serif;
+  --font-body: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+  width: min(1200px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.container-narrow {
+  width: min(880px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+/* -----------------------
+   Typography
+   ----------------------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.08;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 5rem); }
+h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.05rem; }
+
+.italic-display {
+  font-style: italic;
+  font-weight: 400;
+}
+
+p { color: var(--text); }
+.muted { color: var(--muted); }
+
+.eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent-deep);
+}
+
+.eyebrow.light { color: var(--accent-3); }
+
+.text-link {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--border-strong);
+  padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.text-link:hover { color: var(--accent-deep); border-bottom-color: var(--accent); }
+
+.arrow-link {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border-bottom: 1px solid var(--border-strong);
+  padding-bottom: 4px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.arrow-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* -----------------------
+   Header / Nav
+   ----------------------- */
+.site-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.brand-sub {
+  font-size: 0.66rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: 6px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.nav-links a {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.nav-phone {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border-strong);
+  padding-bottom: 2px;
+}
+.nav-phone:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* =========================================================
+   HOMEPAGE — DAYPARTS STRUCTURE
+   ========================================================= */
+
+/* 1. Centered editorial masthead (no split, no photo) */
+.masthead {
+  padding: 5.5rem 0 4rem;
+  text-align: center;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.masthead-eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.masthead-eyebrow .dot {
+  color: var(--accent);
+  margin: 0 0.8rem;
+}
+
+.masthead-headline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.8rem, 7.2vw, 5.8rem);
+  line-height: 1.02;
+  max-width: 18ch;
+  margin: 0 auto 2rem;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+.masthead-lede {
+  max-width: 52ch;
+  margin: 0 auto 2rem;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.masthead-link {
+  display: inline-block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 3px;
+}
+.masthead-link:hover { color: var(--accent-deep); border-bottom-color: var(--accent-deep); }
+
+/* Dayparts section head */
+.dayparts-intro {
+  padding: 2.5rem 0 1rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.dayparts-intro .eyebrow { display: inline-block; margin-bottom: 0.8rem; }
+
+.dayparts-intro h2 {
+  font-style: italic;
+  font-weight: 400;
+  max-width: 20ch;
+  margin: 0 auto;
+}
+
+/* 2. Dayparts bands — THE signature feature */
+.daypart {
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--border);
+}
+.daypart.alt { background: var(--surface-2); }
+
+.daypart-inner {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.daypart-label {
+  position: sticky;
+  top: 6rem;
+}
+
+.daypart-number {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.daypart-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+}
+
+.daypart-window {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 1rem;
+}
+
+.daypart-desc {
+  font-size: 0.98rem;
+  color: var(--text-soft);
+  max-width: 32ch;
+  line-height: 1.65;
+}
+
+.daypart-list {
+  list-style: none;
+  border-top: 1px solid var(--border-strong);
+}
+
+.daypart-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: baseline;
+  padding: 1.3rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.daypart-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.daypart-item-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.005em;
+}
+
+.daypart-item-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.daypart-price {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--accent);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.daypart-footnote {
+  margin-top: 1.4rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* 3. Mission band (edge to edge, dark) */
+.mission-band {
+  background: var(--text);
+  color: var(--bg);
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.mission-band blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.6vw, 2.8rem);
+  line-height: 1.25;
+  max-width: 26ch;
+  margin: 0 auto 2rem;
+  color: var(--bg);
+  letter-spacing: -0.01em;
+}
+
+.mission-band cite {
+  font-style: normal;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--accent-3);
+}
+
+/* 4. Visit strip (plain, quiet) */
+.visit-strip {
+  padding: 5rem 0 4rem;
+}
+
+.visit-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  padding: 2.5rem 0;
+}
+
+.visit-cell h4 {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+
+.visit-cell p {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.visit-cell a:hover { color: var(--accent); }
+
+.visit-strip-footer {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   MENU PAGE
+   ========================================================= */
+.page-masthead {
+  padding: 5rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-masthead .eyebrow { display: inline-block; margin-bottom: 1.2rem; }
+
+.page-masthead h1 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  max-width: 16ch;
+  margin: 0 auto 1.2rem;
+}
+
+.page-masthead .lede {
+  max-width: 54ch;
+  margin: 0 auto;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.menu-section {
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.menu-section:last-of-type { border-bottom: none; }
+
+.menu-section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--text);
+}
+
+.menu-section-head h2 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+}
+
+.menu-section-head .eyebrow {
+  margin-left: auto;
+}
+
+.menu-section-intro {
+  font-size: 0.98rem;
+  color: var(--text-soft);
+  max-width: 54ch;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.menu-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 3.5rem;
+}
+
+.menu-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  padding: 1.3rem 0;
+  border-bottom: 1px dashed var(--border-strong);
+  align-items: baseline;
+}
+
+.menu-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.menu-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.menu-price {
+  font-family: var(--font-display);
+  color: var(--accent);
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.flag {
+  display: inline-block;
+  background: var(--accent-3);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.64rem;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 2px 6px;
+  margin-left: 0.4rem;
+  border-radius: 2px;
+  vertical-align: middle;
+  font-weight: 600;
+}
+
+/* =========================================================
+   BAKERY PAGE
+   ========================================================= */
+.bakery-intro {
+  padding: 4rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 4rem;
+  align-items: end;
+  border-bottom: 1px solid var(--border);
+}
+
+.bakery-intro-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--text);
+  line-height: 1.05;
+}
+
+.bakery-intro p {
+  font-size: 1rem;
+  color: var(--text-soft);
+  line-height: 1.75;
+}
+
+.loaf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border-strong);
+  border-left: 1px solid var(--border-strong);
+}
+
+.loaf {
+  padding: 2rem 1.8rem;
+  border-right: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.loaf-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.loaf-kind {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.loaf-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0.25rem 0 0.75rem;
+  line-height: 1.5;
+}
+
+.loaf-price {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-top: auto;
+}
+
+.catering-block {
+  background: var(--text);
+  color: var(--bg);
+  padding: 5rem 0;
+}
+
+.catering-block .eyebrow { color: var(--accent-3); }
+
+.catering-block h2 {
+  color: var(--bg);
+  font-style: italic;
+  font-weight: 400;
+  margin: 0.8rem 0 1.5rem;
+  max-width: 18ch;
+}
+
+.catering-block p { color: rgba(247, 241, 227, 0.82); max-width: 58ch; }
+
+.catering-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(247, 241, 227, 0.2);
+}
+
+.catering-cell h3 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--bg);
+  margin-bottom: 1rem;
+}
+
+.catering-cell ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.catering-cell li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(247, 241, 227, 0.15);
+  font-size: 0.95rem;
+  color: rgba(247, 241, 227, 0.88);
+}
+
+.catering-cta {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.catering-cta a {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent-3);
+  border-bottom: 1px solid var(--accent-3);
+  padding-bottom: 3px;
+  font-weight: 600;
+}
+.catering-cta a:hover { color: var(--bg); border-bottom-color: var(--bg); }
+
+.catering-terms {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.catering-terms-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+.term h4 {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  margin-bottom: 0.7rem;
+}
+
+.term p {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+/* =========================================================
+   VISIT PAGE
+   ========================================================= */
+.visit-main {
+  padding: 4rem 0 5rem;
+}
+
+.visit-grid-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.visit-block h2 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--text);
+}
+
+.hours-list {
+  list-style: none;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+}
+
+.hours-list .day {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.hours-list .time {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.contact-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.contact-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-row:last-child { border-bottom: none; }
+
+.contact-row .label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.contact-row .value {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.contact-row .value a:hover { color: var(--accent); }
+
+.map-placeholder {
+  aspect-ratio: 16 / 9;
+  margin-top: 3rem;
+  background:
+    linear-gradient(135deg, rgba(184, 74, 46, 0.08), rgba(107, 124, 74, 0.1)),
+    repeating-linear-gradient(0deg, var(--surface-2) 0 1px, var(--bg) 1px 32px),
+    repeating-linear-gradient(90deg, var(--surface-2) 0 1px, var(--bg) 1px 32px);
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+
+/* =========================================================
+   Footer (shared)
+   ========================================================= */
+.site-footer {
+  background: var(--surface-2);
+  color: var(--text);
+  padding: 4rem 0 2rem;
+  margin-top: 0;
+  border-top: 1px solid var(--border-strong);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand .brand-name {
+  font-size: 1.8rem;
+  color: var(--text);
+}
+.footer-brand .brand-sub {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.footer-tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--accent-deep);
+  margin: 1.2rem 0 1.2rem;
+  max-width: 22ch;
+}
+
+.footer-brand p.footer-about {
+  font-size: 0.88rem;
+  color: var(--text-soft);
+  max-width: 36ch;
+  line-height: 1.6;
+}
+
+.site-footer h4 {
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--accent-deep);
+  margin-bottom: 1rem;
+}
+
+.footer-contact {
+  font-size: 0.92rem;
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+.footer-contact a { color: var(--text); border-bottom: 1px solid var(--border-strong); }
+.footer-contact a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-links a {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  transition: color 0.15s ease;
+}
+.footer-links a:hover { color: var(--accent); }
+
+.footer-bottom {
+  border-top: 1px solid var(--border-strong);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--muted);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom a { color: var(--text); border-bottom: 1px solid var(--border-strong); padding-bottom: 1px; }
+.footer-bottom a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 960px) {
+  .daypart-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .daypart-label { position: static; }
+  .bakery-intro { grid-template-columns: 1fr; gap: 1.5rem; align-items: start; }
+  .visit-grid-page { grid-template-columns: 1fr; gap: 2.5rem; }
+  .loaf-grid { grid-template-columns: repeat(2, 1fr); }
+  .menu-list { grid-template-columns: 1fr; gap: 0; }
+  .catering-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .catering-terms-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .visit-strip-grid { grid-template-columns: 1fr; gap: 1.8rem; padding: 1.8rem 0; }
+  .masthead { padding: 3rem 0 2.5rem; }
+  .daypart { padding: 3rem 0; }
+  .mission-band { padding: 4rem 0; }
+  .menu-section { padding: 3rem 0 2.5rem; }
+  .menu-section-head { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  .menu-section-head .eyebrow { margin-left: 0; }
+  .page-masthead { padding: 3rem 0 2.2rem; }
+  .loaf-grid { grid-template-columns: 1fr; }
+  .catering-terms-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 500px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .brand-sub { display: none; }
+  .nav-phone { font-size: 0.95rem; }
+  .daypart-list li { grid-template-columns: 1fr; gap: 0.3rem; }
+  .daypart-price { justify-self: start; }
+}

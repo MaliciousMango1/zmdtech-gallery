@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Dining &amp; Events — The National, Athens GA</title>
+  <meta name="description" content="Host a dinner, rehearsal, or private event at The National in downtown Athens, GA. Buyouts, private room, custom Mediterranean-inspired menus." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Syne:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <div class="nav-left">No. 01 · Spring</div>
+      <a href="index.html" class="nav-brand">The National</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="private-dining.html" class="active">Private</a>
+        <a href="visit.html">Visit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-masthead">
+      <div class="container-narrow">
+        <div class="kicker">Private &middot; Events</div>
+        <h1>The Private Room</h1>
+        <p class="dek">Rehearsal dinners, small weddings, corporate dinners, and occasional buyouts. A quiet room, a shorter menu, the same kitchen.</p>
+      </div>
+    </section>
+
+    <section class="pd-intro">
+      <div class="container">
+        <div class="pd-intro-grid">
+          <div>
+            <div class="smallcaps">The room</div>
+            <h2>A dining room meant for long conversations.</h2>
+            <p>We host private events most evenings of the week. The room seats groups of a dozen to several dozen depending on the layout; full buyouts of the dining room and bar are available for larger parties and for events that need the whole house.</p>
+            <p>Menus are built in conversation with the kitchen and almost always draw from the seasonal dinner list &mdash; tapas to begin, a shared appetizer course, a choice of mains, a dessert or two. Vegetarian and gluten-free arrangements handled as a matter of course.</p>
+            <p>Peter Dale and Erin Wilson have been hosting events in this room since it opened in 2007. Bring us the occasion; we will plan the night.</p>
+          </div>
+
+          <ul class="spec-list" aria-label="Event specifications">
+            <li>
+              <span class="spec-label">Seated</span>
+              <span class="spec-body">Groups from roughly 12 up through the full dining room. Confirm capacity.</span>
+            </li>
+            <li>
+              <span class="spec-label">Buyouts</span>
+              <span class="spec-body">Full-restaurant buyouts for rehearsal dinners, corporate gatherings, and celebrations. Available Monday through Saturday.</span>
+            </li>
+            <li>
+              <span class="spec-label">Menus</span>
+              <span class="spec-body">Custom prix fixe, drawn from the seasonal menu. Tasting-style available on request.</span>
+            </li>
+            <li>
+              <span class="spec-label">Wine</span>
+              <span class="spec-body">Pairings from the cellar, by the bottle or the pour. Corkage by arrangement.</span>
+            </li>
+            <li>
+              <span class="spec-label">Deposits</span>
+              <span class="spec-body">A food-and-beverage minimum applies and varies by night. A deposit holds the date.</span>
+            </li>
+            <li>
+              <span class="spec-label">Lead time</span>
+              <span class="spec-body">Two to four weeks is ideal; we will try for a last-minute dinner when we can.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="pullquote">
+      <div class="container-narrow">
+        <blockquote>
+          <span class="mark">&ldquo;</span>The best dinners are the ones nobody hurried.<span class="mark">&rdquo;</span>
+        </blockquote>
+        <cite>&mdash; Notes from the floor</cite>
+      </div>
+    </section>
+
+    <section class="inquiry" id="inquire">
+      <div class="container-narrow">
+        <div class="inquiry-head">
+          <div class="kicker">Inquire</div>
+          <h2>Tell us about the night.</h2>
+          <p class="lede">A few details and we will write back, usually within two business days. For anything in the next forty-eight hours, please call the restaurant.</p>
+        </div>
+
+        <form class="form-grid" onsubmit="event.preventDefault(); alert('Thank you — your inquiry has been received. The National will be in touch within two business days.'); this.reset();">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+          <div class="field">
+            <label for="date">Preferred date</label>
+            <input id="date" name="date" type="date" />
+          </div>
+          <div class="field">
+            <label for="guests">Guests</label>
+            <input id="guests" name="guests" type="number" min="2" max="120" placeholder="12" />
+          </div>
+          <div class="field">
+            <label for="type">Type of event</label>
+            <select id="type" name="type">
+              <option value="">Select</option>
+              <option>Rehearsal dinner</option>
+              <option>Corporate dinner</option>
+              <option>Birthday or anniversary</option>
+              <option>Full buyout</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" placeholder="Dietary notes, budget, toasts, parking, anything at all."></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Send inquiry</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="rail" aria-label="Reservations">
+      <div class="container">
+        For walk-in reservations: <a href="https://www.opentable.com/r/the-national-athens" target="_blank" rel="noopener">OpenTable</a>
+        <span class="dot">&middot;</span>
+        <a href="tel:+17065493450">(706) 549-3450</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="mark">The National</div>
+          <p class="sub">A Mediterranean-inspired dining room and bar on West Hancock Avenue in downtown Athens, Georgia. Open since 2007.</p>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <ul class="footer-list">
+            <li>232 W Hancock Ave</li>
+            <li>Athens, GA 30601</li>
+            <li><a href="tel:+17065493450">(706) 549-3450</a></li>
+            <li><a href="mailto:reservations@thenationalrestaurant.com">reservations@thenationalrestaurant.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Read</h4>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="private-dining.html">Private Dining</a></li>
+            <li><a href="visit.html">Visit</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Reserve</h4>
+          <ul class="footer-list">
+            <li><a href="https://www.opentable.com/r/the-national-athens" target="_blank" rel="noopener">OpenTable</a></li>
+            <li><a href="https://www.facebook.com/thenationalathens/" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 The National. Est. 2007.</span>
+        <span>Site by <a href="#">ZMD TECH</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

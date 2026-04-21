@@ -1,0 +1,7 @@
+# Personal/local-only permission and preference files
+.claude/settings.local.json
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp

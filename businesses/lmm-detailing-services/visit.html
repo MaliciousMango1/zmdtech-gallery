@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visit &amp; Quote — Athens, GA Mobile Detailing | LMM Detailing</title>
+  <meta name="description" content="Request a mobile detailing quote, call, or text. Serving Athens, GA and surrounding counties. Weekend and evening slots available. Based at 163 Westchester Cir." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-name"><span class="mark">/</span>LMM Detailing</span>
+        <span class="brand-sub">Mobile · Athens, GA · Est. 2018</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="packages.html">Packages</a>
+        <a href="visit.html" class="active">Visit</a>
+      </nav>
+      <a class="nav-cta" href="#quote">Get a quote</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-header">
+      <div class="container">
+        <span class="eyebrow">Visit &amp; Quote</span>
+        <h1>We come to you.</h1>
+        <p class="lede">LMM is 100% mobile. Home driveway, office lot, apartment parking &mdash; if there's a flat spot and water access nearby, we can work. Send a quote request below or call direct.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="container">
+        <div class="visit-grid">
+
+          <div class="visit-card">
+            <h3>Contact</h3>
+
+            <div class="contact-line">
+              <span class="contact-label">Call / Text</span>
+              <span class="contact-value"><a href="tel:+14707787439">(470) 778-7439</a></span>
+            </div>
+            <div class="contact-line">
+              <span class="contact-label">Base</span>
+              <span class="contact-value">163 Westchester Cir<br />Athens, GA 30601</span>
+            </div>
+            <div class="contact-line">
+              <span class="contact-label">Service area</span>
+              <span class="contact-value">Athens-Clarke &amp; surrounding counties</span>
+            </div>
+            <div class="contact-line">
+              <span class="contact-label">Website</span>
+              <span class="contact-value"><a href="https://www.lmmdetailingsvcs.com/" target="_blank" rel="noopener">lmmdetailingsvcs.com ↗</a></span>
+            </div>
+
+            <div class="note">
+              <strong style="color: var(--text); font-weight: 600;">Fastest response:</strong> text the number above with your year/make/model and a couple of photos. Quotes usually come back the same day.
+            </div>
+
+            <div class="map-placeholder" aria-label="Map placeholder">Map — 163 Westchester Cir, Athens GA</div>
+          </div>
+
+          <div class="visit-card">
+            <h3>Hours</h3>
+            <ul class="hours-list">
+              <li><span class="day">Monday</span><span class="time">8:00 am – 9:30 pm</span></li>
+              <li><span class="day">Tuesday</span><span class="time">8:00 am – 9:30 pm</span></li>
+              <li><span class="day">Wednesday</span><span class="time">8:00 am – 9:30 pm</span></li>
+              <li><span class="day">Thursday</span><span class="time">8:00 am – 9:30 pm</span></li>
+              <li><span class="day">Friday</span><span class="time">8:00 am – 9:30 pm</span></li>
+              <li><span class="day">Saturday</span><span class="time">6:00 am – 9:30 pm</span></li>
+              <li><span class="day">Sunday</span><span class="time">9:00 am – 7:30 pm</span></li>
+            </ul>
+
+            <div class="note">
+              Weather cancellations and late-season heat may shift start times. We'll always reach out before a confirmed appointment if anything changes.
+            </div>
+
+            <h4 style="font-family: var(--font-display); font-size: 1.05rem; margin: 2rem 0 0.8rem; color: var(--text);">Good to know</h4>
+            <p style="color: var(--text-soft); font-size: 0.92rem; margin-bottom: 0.8rem;"><strong style="color: var(--text); font-weight: 600;">Water &amp; power:</strong> we bring our own if needed. Driveway and garage outlet access just makes it faster.</p>
+            <p style="color: var(--text-soft); font-size: 0.92rem; margin-bottom: 0.8rem;"><strong style="color: var(--text); font-weight: 600;">Payment:</strong> card, cash, and major digital methods.</p>
+            <p style="color: var(--text-soft); font-size: 0.92rem;"><strong style="color: var(--text); font-weight: 600;">Discounts:</strong> student and military &mdash; mention when you call.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="quote" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <div class="quote-form">
+          <span class="eyebrow" style="margin-bottom: 0.8rem;">Quote request</span>
+          <h3>Tell us about the vehicle.</h3>
+          <p>We'll respond the same day with a price, estimated time, and the next available slot. For fastest turnaround, text photos after submitting.</p>
+
+          <form onsubmit="event.preventDefault(); alert('Thanks. Your quote request has been received — we\\'ll be in touch shortly at the number you provided.'); this.reset();">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" required placeholder="First and last" />
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(XXX) XXX-XXXX" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" />
+              </div>
+              <div class="form-field">
+                <label for="zip">Service ZIP</label>
+                <input type="text" id="zip" name="zip" placeholder="30601" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="vehicle">Year / Make / Model</label>
+                <input type="text" id="vehicle" name="vehicle" required placeholder="2019 Toyota 4Runner" />
+              </div>
+              <div class="form-field">
+                <label for="package">Service or package</label>
+                <select id="package" name="package" required>
+                  <option value="">Choose one</option>
+                  <option>The Show — exterior detail</option>
+                  <option>LMM's Best — full detail</option>
+                  <option>The Reset — deep restoration</option>
+                  <option>Ceramic coating — 3 year</option>
+                  <option>Ceramic coating — 5 year</option>
+                  <option>Ceramic coating — 10 year</option>
+                  <option>Paint correction only</option>
+                  <option>Interior only</option>
+                  <option>Pet hair / odor / mold remediation</option>
+                  <option>Not sure — needs a walk-through</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field full" style="margin-bottom: 1.5rem;">
+              <label for="notes">Notes (condition, concerns, preferred dates)</label>
+              <textarea id="notes" name="notes" placeholder="Anything we should know about the vehicle. Pet hair, smoke, waterspots, scheduling preferences, etc."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <p class="form-disclaimer">We'll only use your info to respond to this request.</p>
+              <button type="submit" class="btn btn-primary">Send request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="container">
+        <div class="cta-band">
+          <span class="eyebrow" style="justify-content: center;">Prefer to talk</span>
+          <h2>Call or text. That's faster.</h2>
+          <p>Larry answers the phone. Tell him what the vehicle is, what you want done, and you'll have a price and a time slot before you hang up.</p>
+          <div class="hero-actions" style="justify-content: center;">
+            <a class="btn btn-primary" href="tel:+14707787439">Call (470) 778-7439</a>
+            <a class="btn btn-secondary" href="sms:+14707787439">Send a text</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="brand-footer">
+          <span class="brand-name"><span style="color: var(--accent);">/</span>LMM Detailing</span>
+          <div class="brand-sub">Mobile · Athens, GA · Est. 2018</div>
+          <p class="footer-tagline">Finish-grade detail, at your driveway.</p>
+          <p style="font-size: 0.85rem; color: var(--muted); max-width: 34ch;">Owner-operated mobile detailing serving Athens and surrounding counties. Wash, polish, ceramic coating, paint correction, interior restoration.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Base</h4>
+          <p>
+            163 Westchester Cir<br />
+            Athens, GA 30601<br />
+            <a href="tel:+14707787439">(470) 778-7439</a>
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="visit.html">Visit &amp; Quote</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.lmmdetailingsvcs.com/" target="_blank" rel="noopener">Official site ↗</a></li>
+            <li><a href="tel:+14707787439">Call / Text</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 LMM Detailing Services. All rights reserved.</span>
+        <span>Site by <a href="#">ZMD TECH</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

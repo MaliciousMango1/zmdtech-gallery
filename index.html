@@ -7,672 +7,204 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: Inter, system-ui, sans-serif; background: #f6f1e8; color: #231815; line-height: 1.5; padding: 2rem; }
-    .container { max-width: 1200px; margin: 0 auto; }
+    .container { max-width: 1180px; margin: 0 auto; }
     h1 { font-size: 2rem; margin-bottom: 0.4rem; }
-    .subtitle { color: #64574d; margin-bottom: 2rem; }
-    h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: #a84f2d; font-weight: 700; margin-bottom: 1rem; margin-top: 2.5rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.1rem; }
-    .card { background: #fffaf4; border: 1.5px solid #e7d7c6; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(35,24,21,0.07); display: flex; flex-direction: column; }
-    .card-header { padding: 1rem 1rem 0.6rem; border-bottom: 1px solid #ede3d5; }
-    .card h3 { font-size: 0.95rem; margin-bottom: 0.2rem; }
-    .tag-row { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; margin-bottom: 0.5rem; }
-    .tag { display: inline-block; padding: 0.18rem 0.55rem; border-radius: 999px; font-size: 0.65rem; font-weight: 700; background: #f0e8dc; color: #7a5c1a; }
-    .tag.platform { background: #e8eef5; color: #2d4a6b; }
-    .tag.hot { background: #fde8b4; color: #7a4f00; }
-    .card-body { padding: 0.8rem 1rem; flex: 1; }
-    .card p { font-size: 0.77rem; color: #64574d; margin-bottom: 0.6rem; }
-    .win-box { background: #f3f9f3; border: 1px solid #c8ddd0; border-radius: 8px; padding: 0.5rem 0.65rem; margin-bottom: 0.7rem; }
-    .win-box strong { font-size: 0.7rem; color: #2d5e36; display: block; margin-bottom: 0.1rem; }
-    .win-box span { font-size: 0.72rem; color: #3d6e47; }
-    .current-site { font-size: 0.72rem; color: #888; margin-bottom: 0.5rem; }
-    .current-site a { color: #888; text-decoration: underline; text-underline-offset: 2px; }
-    .card-footer { padding: 0.7rem 1rem 1rem; display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; }
-    .btn-demo { display: inline-block; padding: 0.45rem 1rem; border-radius: 999px; background: #231815; color: white; text-decoration: none; font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
-    .btn-demo:hover { opacity: 0.8; }
-    .btn-current { display: inline-block; padding: 0.38rem 0.8rem; border-radius: 999px; background: #e8eef5; color: #2d4a6b; text-decoration: none; font-size: 0.7rem; font-weight: 600; white-space: nowrap; }
-    .btn-current:hover { background: #d5dff0; }
-    .btn-pending { display: inline-block; padding: 0.38rem 0.8rem; border-radius: 999px; background: #e8eef5; color: #888; text-decoration: none; font-size: 0.7rem; font-weight: 600; cursor: default; }
-    .stats-row { display: flex; gap: 1.5rem; padding: 1.25rem 1.5rem; background: #fffaf4; border: 1px solid #e7d7c6; border-radius: 18px; margin-bottom: 2rem; flex-wrap: wrap; }
-    .stat strong { display: block; font-size: 1.4rem; }
-    .stat span { font-size: 0.72rem; color: #64574d; }
-    .divider { height: 1px; background: #e7d7c6; margin: 2rem 0; }
-    footer { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #e7d7c6; color: #64574d; font-size: 0.8rem; }
-    .hot-card { border-color: #d9a441; }
-    .section-intro { font-size: 0.8rem; color: #888; margin-bottom: 0.5rem; margin-top: -0.5rem; }
-    .pending-note { font-size: 0.75rem; color: #a0a0a0; font-style: italic; }
+    .subtitle { color: #64574d; margin-bottom: 2.5rem; }
+    h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: #a84f2d; font-weight: 700; margin-bottom: 1rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+    .card { background: #fffaf4; border: 1px solid #e7d7c6; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(35,24,21,0.07); display: flex; flex-direction: column; }
+    .card-body { padding: 1rem; display: flex; flex-direction: column; flex: 1; }
+
+    .tag-row { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-bottom: 0.5rem; align-items: center; }
+    .tag { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.68rem; font-weight: 700; background: #f0e8dc; color: #7a5c1a; }
+    .status { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.18rem 0.55rem; border-radius: 999px; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid transparent; }
+    .status::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; }
+    .status-ok { background: #e7f0e2; color: #345a28; border-color: #c5d7b8; }
+    .status-ok::before { background: #548a3a; }
+    .status-review { background: #faefcc; color: #7e5d10; border-color: #e8cf81; }
+    .status-review::before { background: #c49514; }
+    .status-decision { background: #fae2d6; color: #8a3010; border-color: #eeb697; }
+    .status-decision::before { background: #c74a1b; }
+
+    .card h3 { font-size: 0.98rem; margin-bottom: 0.3rem; }
+    .card p { font-size: 0.78rem; color: #64574d; margin-bottom: 0.6rem; }
+
+    .todo { font-size: 0.73rem; color: #3b2d21; background: #f6ecdd; padding: 0.5rem 0.7rem; border-radius: 10px; margin-bottom: 0.8rem; border-left: 3px solid #c49514; line-height: 1.4; }
+    .todo.decision { border-left-color: #c74a1b; background: #fbede4; }
+    .todo.ok { border-left-color: #548a3a; background: #eff3ea; color: #2f4a25; }
+    .todo strong { color: #231815; }
+
+    .card a.view { display: inline-block; padding: 0.5rem 1rem; border-radius: 999px; background: #231815; color: white; text-decoration: none; font-size: 0.78rem; font-weight: 700; align-self: flex-start; margin-top: auto; }
+    .card a.view:hover { opacity: 0.85; }
+
+    .stats { display: flex; gap: 2rem; padding: 1.5rem 0; border-top: 1px solid #e7d7c6; margin-top: 1rem; flex-wrap: wrap; }
+    .stat strong { display: block; font-size: 1.5rem; }
+    .stat span { font-size: 0.75rem; color: #64574d; }
+
+    .legend { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 2rem; padding: 0.9rem 1.1rem; background: #fffaf4; border: 1px solid #e7d7c6; border-radius: 12px; font-size: 0.78rem; color: #64574d; }
+    .legend strong { color: #231815; margin-right: 0.4rem; }
+
+    footer { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e7d7c6; color: #64574d; font-size: 0.8rem; }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>ZMD TECH Demo Gallery</h1>
-    <p class="subtitle">Modern, fast website redesigns for local Athens-area businesses. Built with Astro + Cloudflare Pages.</p>
+    <p class="subtitle">Modern, fast website redesigns for local Athens-area businesses. Built as independent static sites, deployed via Cloudflare Pages.</p>
 
-    <div class="stats-row">
-      <div class="stat"><strong>31</strong><span>Demos Built</span></div>
-      <div class="stat"><strong>17</strong><span>Deployed</span></div>
-      <div class="stat"><strong>20</strong><span>Restaurants</span></div>
-      <div class="stat"><strong>11</strong><span>Small Businesses</span></div>
-      <div class="stat"><strong>5</strong><span>Archetypes</span></div>
+    <div class="legend">
+      <span><strong>Status:</strong></span>
+      <span><span class="status status-ok">Ready</span> Standard follow-ups only (photos + maps)</span>
+      <span><span class="status status-review">Review</span> Has content flags needing client confirmation</span>
+      <span><span class="status status-decision">Decision</span> Blocking question before pitch</span>
     </div>
 
-    <h2>Restaurants — 20 Demos</h2>
-    <p class="section-intro">Showing 14 deployed. 6 pending deployment.</p>
+    <h2>Restaurants — 11 Demos</h2>
     <div class="grid">
 
-      <!-- The Roe -->
-      <div class="card hot-card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag hot">🔥 Hot Lead</span>
-            <span class="tag">Editorial / Upscale</span>
-            <span class="tag platform">Shopify (broken)</span>
-          </div>
-          <h3>The Roe — Monroe</h3>
-          <div class="current-site">Live: <a href="https://www.theroe.com" target="_blank">theroe.com</a> — Shopify "store currently unavailable"</div>
-        </div>
-        <div class="card-body">
-          <p>Monroe favorite in a historic 1850s building. Paying ~$50/mo for a Shopify store that shows "currently unavailable" — zero online orders possible.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Menu, events, and online ordering — every broken Shopify page you can't use, the demo replaces. Immediate revenue recovery.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/the-roe/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.theroe.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Coastal / Polished</span><span class="status status-review">Review</span></div>
+        <h3>George's Lowcountry Table</h3>
+        <p>Ingredient-forward coastal seafood. "What came in today" home layout, Spectral + Outfit, sand + sea-teal + coral.</p>
+        <div class="todo"><strong>Fix:</strong> address is 420 Macon Hwy, not Watkinsville/Windsor. All 5 oyster varieties on home are invented — replace with real rotation. Founding year (Est. 2016) is an inference.</div>
+        <a class="view" href="restaurants/georges-lowcountry-table/index.html">View Demo →</a>
+      </div></div>
 
-      <!-- Moma Punkin's Place -->
-      <div class="card hot-card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag hot">🔥 Hot Lead</span>
-            <span class="tag">Catering / Comfort</span>
-            <span class="tag platform">Parked Domain</span>
-          </div>
-          <h3>Moma Punkin's Place — Greensboro</h3>
-          <div class="current-site">Live: <a href="https://www.momapunkinsplace.com" target="_blank">momapunkinsplace.com</a> — parked domain, no real website</div>
-        </div>
-        <div class="card-body">
-          <p>Southern soul food. Zero independent web presence — exists only on food delivery aggregators on their terms, with their fees, their rules.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>First real website they own. Menu, story, catering inquiry, direct customer relationship — no middleman.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/moma-punkins-place/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.momapunkinsplace.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Southern / Heritage</span><span class="status status-review">Review</span></div>
+        <h3>Strickland's Restaurant</h3>
+        <p>Timeline-centric heritage site. 65-year story as the signature content. EB Garamond + Manrope, ivory + burgundy + gold.</p>
+        <div class="todo"><strong>Confirm:</strong> verified milestones 1960 / 1975 / 1977 / 1995 / 1997. Inferred: 2012 award year, 2020 takeout-only, 2025 third-generation. Burgundy quote is house voice.</div>
+        <a class="view" href="restaurants/stricklands-restaurant/index.html">View Demo →</a>
+      </div></div>
 
-      <!-- The Master's Table -->
-      <div class="card hot-card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag hot">🔥 Hot Lead</span>
-            <span class="tag">Catering / Comfort</span>
-            <span class="tag platform">2000s Table HTML</span>
-          </div>
-          <h3>The Master's Table — Winder</h3>
-          <div class="current-site">Live: <a href="https://cateringbythemasterstable.com" target="_blank">cateringbythemasterstable.com</a> — table-based HTML, hand-coded</div>
-        </div>
-        <div class="card-body">
-          <p>Catering since forever. The site literally says "we do not accept credit or debit cards." Every page looks like 2002.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>10–15 year visual leap. Inquiry forms, event galleries, mobile-friendly catering menu. Book more jobs, less phone tag.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/the-masters-table/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://cateringbythemasterstable.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Family / Comfort</span><span class="status status-decision">Decision</span></div>
+        <h3>Plantation Buffet</h3>
+        <p>"On the buffet today" daily-board layout. Centered masthead, three-column lists. Lora + Source Sans 3, cream + brick + sage.</p>
+        <div class="todo decision"><strong>Decision:</strong> business was renamed to <em>J &amp; L Buffet</em> in 2025 per Flagpole. Keep old name or rebrand? All prices are `$ —` placeholders.</div>
+        <a class="view" href="restaurants/plantation-buffet/index.html">View Demo →</a>
+      </div></div>
 
-      <!-- Traveling Hobo Cafe -->
-      <div class="card hot-card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag hot">🔥 Hot Lead</span>
-            <span class="tag">Bold / Fast-Casual</span>
-            <span class="tag platform">Facebook Only — $0</span>
-          </div>
-          <h3>Traveling Hobo Cafe — Watkinsville</h3>
-          <div class="current-site">Live: <a href="https://www.facebook.com/TravelingHoboCafe/" target="_blank">facebook.com/TravelingHoboCafe</a> — no independent website</div>
-        </div>
-        <div class="card-body">
-          <p>Watkinsville local favorite. Zero local search footprint in 2026 — Facebook is their entire web presence. Any Google search for "Watkinsville restaurant" misses them completely.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Own your Google result. Proper hours, menu, photos, directions. Zero local search competition in Watkinsville.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/traveling-hobo-cafe/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.facebook.com/TravelingHoboCafe/" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Editorial / Upscale</span><span class="status status-ok">Ready</span></div>
+        <h3>Porterhouse Grill</h3>
+        <p>Elegant dark steakhouse. Cormorant Garamond italic, oxblood + brass. Full menu with real prices extracted.</p>
+        <div class="todo ok"><strong>Note:</strong> "Since 1997" founding year is a guess — confirm with owner. Otherwise content is solid; standard photo + map + Resy wiring to finalize.</div>
+        <a class="view" href="restaurants/porterhouse-grill/index.html">View Demo →</a>
+      </div></div>
 
-      <!-- Thyme to Cater Bistro -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Cafe / Catering</span>
-            <span class="tag platform">GoDaddy Builder</span>
-          </div>
-          <h3>Thyme to Cater Bistro — Jefferson</h3>
-          <div class="current-site">Live: <a href="https://thymetocaterbistro.com" target="_blank">thymetocaterbistro.com</a> — GoDaddy builder, filler email exposed in search results</div>
-        </div>
-        <div class="card-body">
-          <p>"Best Catering 3 years running" in Jefferson. GoDaddy builder look and feel kills the premium positioning stone dead.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Polished brand story that matches the quality of the food. Event inquiry form that converts browsers into booked events.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/thyme-to-cater-bistro/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://thymetocaterbistro.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Editorial / Upscale</span><span class="status status-review">Review</span></div>
+        <h3>Big City Bread Cafe</h3>
+        <p>Dayparts bands structure (Morning / Midday / Bakery / Catering). Bodoni Moda + Inter Tight, flour cream + espresso + rust.</p>
+        <div class="todo"><strong>Confirm:</strong> founder story (Matthew &amp; Deenan Scott / 1998) is verified. Several menu prices are placeholder. Mission-band quote is house voice — consider real owner quote.</div>
+        <a class="view" href="restaurants/big-city-bread-cafe/index.html">View Demo →</a>
+      </div></div>
 
-      <!-- The Place -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Southern / Heritage</span>
-            <span class="tag platform">Custom + ToastTab</span>
-          </div>
-          <h3>The Place — Athens</h3>
-          <div class="current-site">Live: <a href="https://www.theplaceathens.com" target="_blank">theplaceathens.com</a> — sparse homepage, thin brand story</div>
-        </div>
-        <div class="card-body">
-          <p>Downtown Athens refined Southern dining. Across from The Arch, family-owned, 265 TripAdvisor reviews — and the website barely tells you who they are.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Brand story front and center. Cocktail program, private events, brunch — all discoverable before they call to book.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/the-place/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.theplaceathens.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Editorial / Upscale</span><span class="status status-review">Review</span></div>
+        <h3>Trumps Catering</h3>
+        <p>B2B event taxonomy + inquiry-forward. 2×3 event-type grid, prominent inquiry form. IBM Plex Serif + Sans, charcoal + copper.</p>
+        <div class="todo"><strong>Confirm:</strong> verified 1986, founders Ron Schwartz + Andrée Kosak, 2026 S Milledge. Inline <code>VERIFY</code> tags mark unconfirmed: chef name, email, "1,500+ weddings", capacity.</div>
+        <a class="view" href="restaurants/trumps-catering/index.html">View Demo →</a>
+      </div></div>
 
-      <!-- Kelly's Authentic Jamaican Food -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Bold / Fast-Casual</span>
-            <span class="tag platform">Wix</span>
-          </div>
-          <h3>Kelly's Authentic Jamaican Food</h3>
-          <div class="current-site">Live: <a href="https://www.kellysjerk.com" target="_blank">kellysjerk.com</a> — thin Wix image-heavy site, crawlability issues</div>
-        </div>
-        <div class="card-body">
-          <p>20+ years of Athens favorites. Thin Wix site that's almost all photos with almost no content for Google to index or customers to read.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Full menu architecture with SEO value. Catering inquiry form. The 20-year story that builds local loyalty.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/kellys-authentic-jamaican-food/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.kellysjerk.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Southern / Heritage</span><span class="status status-review">Review</span></div>
+        <h3>The Place</h3>
+        <p>Short-list-as-menu editorial. Centered masthead, single column of dishes as the homepage hero. Libre Caslon + Work Sans, dusty rose + maroon.</p>
+        <div class="todo"><strong>Fix:</strong> address is 229 E Broad Street, not Clayton. All prices are `$ —` placeholders. Owners Alan &amp; Ryan Pope named — confirm comfort.</div>
+        <a class="view" href="restaurants/the-place/index.html">View Demo →</a>
+      </div></div>
 
-      <!-- The National -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Editorial / Upscale</span>
-            <span class="tag platform">Custom PHP (HTTP)</span>
-          </div>
-          <h3>The National — Athens</h3>
-          <div class="current-site">Live: <a href="http://www.thenationalrestaurant.com" target="_blank">thenationalrestaurant.com</a> — HTTP, under-marketed, Peter Dale's kitchen deserves better</div>
-        </div>
-        <div class="card-body">
-          <p>Well-known Mediterranean-inspired spot. Peter Dale's kitchen is world-class — the website doesn't reflect it. HTTPS isn't even enabled.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Editorial magazine layout matching the quality of the food. Events, wine program,Resy integration — drives more covers.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/the-national/index.html" class="btn-demo">View Demo →</a>
-          <a href="http://www.thenationalrestaurant.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Editorial / Upscale</span><span class="status status-review">Review</span></div>
+        <h3>The National</h3>
+        <p>Magazine-journal layout. Feature-essay hero with drop cap, oversized pull quote. Syne + Newsreader, bone + navy + amber.</p>
+        <div class="todo"><strong>Confirm:</strong> verified 2007, owner Peter Dale, 232 W Hancock. Kitchen essay + pull quote are house voice — consider real press or chef quote. Some cellar prices unpublished.</div>
+        <a class="view" href="restaurants/the-national/index.html">View Demo →</a>
+      </div></div>
 
-      <!-- Porterhouse Grill -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Editorial / Upscale</span>
-            <span class="tag platform">Spotapps (SaaS)</span>
-          </div>
-          <h3>Porterhouse Grill</h3>
-          <div class="current-site">Live: <a href="https://porterhousegrillathens.com" target="_blank">porterhousegrillathens.com</a> — Spotapps template, placeholder "Slide 1 content" still live</div>
-        </div>
-        <div class="card-body">
-          <p>Premium steakhouse with placeholder text in the hero carousel still saying "Slide 1 content." Resy and catering are the revenue — the site doesn't sell either.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Premium feel that earns reservations before they pick up the phone. Private events page that actually books weddings.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/porterhouse-grill/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://porterhousegrillathens.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Bold / Fast-Casual</span><span class="status status-review">Review</span></div>
+        <h3>The Taco Stand</h3>
+        <p>Menu-as-hero cascade. Giant Bricolage type for taco names, colored sauce dots. Cream + charcoal + hot red.</p>
+        <div class="todo"><strong>Confirm:</strong> several prices `$ —` (pork taco, shrimp taco, bean &amp; cheese burrito, taco salad variants, drinks). Eastside address has a discrepancy across listings (2230 vs 2270 S Barnett Shoals).</div>
+        <a class="view" href="restaurants/the-taco-stand/index.html">View Demo →</a>
+      </div></div>
 
-      <!-- Big City Bread Cafe -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Editorial / Upscale</span>
-            <span class="tag platform">Custom + ToastTab</span>
-          </div>
-          <h3>Big City Bread Cafe</h3>
-          <div class="current-site">Live: <a href="https://www.bigcitybreadcafe.com" target="_blank">bigcitybreadcafe.com</a> — cluttered custom site, heavy on text, light on vibe</div>
-        </div>
-        <div class="card-body">
-          <p>20 years of Athens mornings. House-made everything, beautiful courtyard patio,UberEats + DoorDash. Site buries all of it under a wall of links and text.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Visual breath. Big photos of the courtyard. Clear brunch focus. Menu that's readable on a phone at 8am.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/big-city-bread-cafe/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.bigcitybreadcafe.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Coastal / Polished</span><span class="status status-review">Review</span></div>
+        <h3>Marker 7 Coastal Grill</h3>
+        <p>"On the grill tonight" chalkboard layout. Anton condensed display + Inter, navy + weathered wood + mustard.</p>
+        <div class="todo"><strong>Confirm:</strong> founding year unknown (press suggests ~2014–15). All 8 draft beers and 6 cocktails on the home rail are placeholders. Email not public — site points to contact form.</div>
+        <a class="view" href="restaurants/marker-7-coastal-grill/index.html">View Demo →</a>
+      </div></div>
 
-      <!-- George's Lowcountry Table -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Coastal / Polished</span>
-            <span class="tag platform">Custom + SpotOn</span>
-          </div>
-          <h3>George's Lowcountry Table</h3>
-          <div class="current-site">Live: <a href="https://www.georgeslowcountrytable.com" target="_blank">georgeslowcountrytable.com</a> — generic custom site. TripAdvisor #6 in Athens.</div>
-        </div>
-        <div class="card-body">
-          <p>TripAdvisor's #6 restaurant in Athens. Loyal following, strong reviews — and the website feels like a template from 2015.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Coastal editorial feel that matches the food. Sunday brunch, private dining, catering — all discoverable and bookable.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/georges-lowcountry-table/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.georgeslowcountrytable.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <!-- Plantation Buffet -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Family / Comfort</span>
-            <span class="tag platform">Static HTML (2000s)</span>
-          </div>
-          <h3>Plantation Buffet</h3>
-          <div class="current-site">Live: <a href="https://plantationbuffet.com" target="_blank">plantationbuffet.com</a> — ancient static HTML, no photos, no mobile layout</div>
-        </div>
-        <div class="card-body">
-          <p>Lunch-only cafeteria. No photos, no personality online. This site was built and never touched for 15+ years.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Trust-building layout that shows the spread. Clear hours, scannable menu, call to action that drives repeat visits.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/plantation-buffet/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://plantationbuffet.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <!-- Strickland's Restaurant -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Southern / Heritage</span>
-            <span class="tag platform">Custom PHP</span>
-          </div>
-          <h3>Strickland's Restaurant</h3>
-          <div class="current-site">Live: <a href="https://www.stricklandsrestaurant.com" target="_blank">stricklandsrestaurant.com</a> — minimal PHP site, no mobile polish, built for 2008</div>
-        </div>
-        <div class="card-body">
-          <p>1960, Athens institution. Breakfast that locals swear by. "Slap your mama good food." Online presence was built for the dial-up era.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Heritage-forward design. Full breakfast story, event catering page, modern mobile experience for students and locals alike.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/stricklands-restaurant/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.stricklandsrestaurant.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <!-- White Tiger Gourmet -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Bold / Fast-Casual</span>
-            <span class="tag platform">Custom + ToastTab</span>
-          </div>
-          <h3>White Tiger Gourmet</h3>
-          <div class="current-site">Live: <a href="https://www.whitetigergourmet.com" target="_blank">whitetigergourmet.com</a> — split across 3 domains, brand fragmentation</div>
-        </div>
-        <div class="card-body">
-          <p>17 years of Athens BBQ goodwill. Split across whitetigergourmet.com, whitetigerathens.com, and whitetigerdeluxe.com — Google juice and brand trust all diluted.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>One brand, two locations, clear menus. Multi-location consolidation. BYOB story that sells the full experience.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/white-tiger-gourmet/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.whitetigergourmet.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <!-- Marker 7 Coastal Grill -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Coastal / Polished</span>
-            <span class="tag platform">Static HTML</span>
-          </div>
-          <h3>Marker 7 Coastal Grill</h3>
-          <div class="current-site">Live: <a href="https://www.marker7coastalgrill.co" target="_blank">marker7coastalgrill.co</a> — PDF menus, no searchable content</div>
-        </div>
-        <div class="card-body">
-          <p>Oyster bar in a historic Five Points home. PDF menus mean Google can't read the menu at all — zero searchable content, zero menu SEO.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Web-readable menu with full SEO value. Events, oyster happy hour, private dining — discoverable in Google before they call.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/marker-7-coastal-grill/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.marker7coastalgrill.co" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <!-- Trumps Catering -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Editorial / Upscale</span>
-            <span class="tag platform">Custom PHP</span>
-          </div>
-          <h3>Trumps Catering</h3>
-          <div class="current-site">Live: <a href="https://www.trumpscatering.com" target="_blank">trumpscatering.com</a> — clean but dated custom PHP, inquiry-only, no conversion flow</div>
-        </div>
-        <div class="card-body">
-          <p>Athens institution since 1986. Strong on WeddingWire and The Knot but the actual website feels like a PDF printed as a webpage.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Event portfolio that books weddings directly. Inquiry form that qualifies leads. Corporate catering trust signals.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/trumps-catering/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.trumpscatering.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <!-- The Taco Stand -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Bold / Fast-Casual</span>
-            <span class="tag platform">Custom HTML</span>
-          </div>
-          <h3>The Taco Stand</h3>
-          <div class="current-site">Live: <a href="https://www.thetacostandathens.com" target="_blank">thetacostandathens.com</a> — basic HTML, thin brand, no SEO depth</div>
-        </div>
-        <div class="card-body">
-          <p>670 N. Milledge Ave local staple. Functional but thin — no story, no menu depth, no brand personality beyond "we sell tacos."</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Menu that's searchable and shareable. Athens-owned story. Online ordering integration that reduces phone volume.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="restaurants/the-taco-stand/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.thetacostandathens.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Bold / Fast-Casual</span><span class="status status-decision">Decision</span></div>
+        <h3>White Tiger Gourmet</h3>
+        <p>Multi-location unifier. "Two spots, one White Tiger." with Normaltown + Deluxe counters. Unbounded + Inter, cream + charcoal + orange.</p>
+        <div class="todo decision"><strong>Decision:</strong> brand is split across <code>whitetigergourmet.com</code>, <code>whitetigerathens.com</code>, <code>whitetigerdeluxe.com</code>. Pick canonical domain, decide 301 redirects. All prices placeholder. Minor CSS overflow to fix.</div>
+        <a class="view" href="restaurants/white-tiger-gourmet/index.html">View Demo →</a>
+      </div></div>
 
     </div>
 
-    <!-- PENDING RESTAURANTS -->
-    <div class="divider"></div>
-    <h2>Restaurants — Pending Deployment</h2>
-    <p class="section-intro">Built locally, not yet pushed to Cloudflare Pages.</p>
+    <h2>Small Businesses — 5 Demos</h2>
     <div class="grid">
 
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row"><span class="tag">Family / Comfort</span><span class="tag platform">Basic HTML</span></div>
-          <h3>Ichiban Buffet — Winder</h3>
-          <div class="current-site">Live: <a href="https://www.winderichiban.com" target="_blank">winderichiban.com</a> — wall of text menu with grammar issues, KwickMenu ordering</div>
-        </div>
-        <div class="card-body">
-          <p>Japanese/Chinese buffet. Menu page is a wall of unformatted text with typos. Families searching for Winder restaurants find a wall of words.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Scannable menu by category. Event catering flow. Mobile-first layout for families on the go.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn-pending">Demo Pending →</a>
-          <a href="https://www.winderichiban.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Legacy Barbershop</span><span class="status status-ok">Ready</span></div>
+        <h3>Mr. Haircut Athens</h3>
+        <p>Heritage barbershop, walk-in only. Playfair Display + Inter, warm cream + barber red. 4 pages with real pricing extracted.</p>
+        <div class="todo ok"><strong>Note:</strong> Content is solid. Standard follow-ups only — photos, map embed, shop email (not on live site), Google Reviews URL.</div>
+        <a class="view" href="businesses/mr-haircut-athens/index.html">View Demo →</a>
+      </div></div>
 
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row"><span class="tag">Southern / Heritage</span><span class="tag platform">Static HTML</span></div>
-          <h3>The Magnolia Place — Winder</h3>
-          <div class="current-site">Live: <a href="https://magnoliaplacerestaurant.com" target="_blank">magnoliaplacerestaurant.com</a> — minimal placeholder. Restaurantji shows "CLOSED".</div>
-        </div>
-        <div class="card-body">
-          <p>Winder Southern spot. Hours page has "12am" typo instead of "12pm." Restaurantji lists it as closed — verify before outreach. If open, the gap is huge.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Clear hours, full story, menu if still operating. Any modern presence beats a closed-sign page or broken search result.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn-pending">Demo Pending →</a>
-          <a href="https://magnoliaplacerestaurant.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Sustainable Boutique</span><span class="status status-ok">Ready</span></div>
+        <h3>Community</h3>
+        <p>Brand-forward marketing site linking out to existing Shopify. Instrument Serif + Inter, oat + sage + terracotta. Sewing for the Dawgs callout.</p>
+        <div class="todo ok"><strong>Note:</strong> Sanni's story verified. Testimonials (Whitten, Wright, Barnes) are real — confirm republish permission. "Shop" nav links out to Shopify as planned.</div>
+        <a class="view" href="businesses/community-athens/index.html">View Demo →</a>
+      </div></div>
 
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row"><span class="tag">Cafe / Casual</span><span class="tag platform">OpenCart</span></div>
-          <h3>Krimson Kafe — Watkinsville</h3>
-          <div class="current-site">Live: <a href="https://www.krimsonkafe.com" target="_blank">krimsonkafe.com</a> — OpenCart storefront, near-empty homepage</div>
-        </div>
-        <div class="card-body">
-          <p>Watkinsville lunch spot. OpenCart handles packaged goods (pound cakes) but the main homepage is a near-empty page. Selling scones, not the experience.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Menu-first layout. Wholesale accounts via proper e-commerce. Event catering inquiry. OpenCart category pages stay, homepage converts.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn-pending">Demo Pending →</a>
-          <a href="https://www.krimsonkafe.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Bakery / Cafe</span><span class="status status-review">Review</span></div>
+        <h3>Bee's Knees Bakery &amp; Gifts</h3>
+        <p>Full 5-page bakery site — Home / Menu / Cakes / Weddings / Visit. DM Serif Display + Inter, cream + honey + rose. Real prices and flavor lists.</p>
+        <div class="todo"><strong>Confirm:</strong> the "&amp; Gifts" part of the brand has no visible giftware online. Ask: still active? Retired? Should we add a gifts page?</div>
+        <a class="view" href="businesses/bees-knees-bakery-gifts/index.html">View Demo →</a>
+      </div></div>
+
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Premium Detailing</span><span class="status status-review">Review</span></div>
+        <h3>LMM Detailing Services</h3>
+        <p>Package price-ladder homepage with "Most Popular" tier. Space Grotesk + Inter, near-black + electric orange. Before/after strips.</p>
+        <div class="todo"><strong>Confirm:</strong> "The Reset" tier name and scope are invented. Package inclusions inferred from price points. Two possible addresses (163 Westchester Cir vs 1290 Oconee St) — which is current?</div>
+        <a class="view" href="businesses/lmm-detailing-services/index.html">View Demo →</a>
+      </div></div>
+
+      <div class="card"><div class="card-body">
+        <div class="tag-row"><span class="tag">Pet Care Campus</span><span class="status status-decision">Decision</span></div>
+        <h3>The Dawg House</h3>
+        <p>Day-in-the-life timeline hero + pricing-by-size table. Lora + Nunito, cream + forest + coral. Sticky mobile reserve bar.</p>
+        <div class="todo decision"><strong>Decision:</strong> live site publishes no prices — entire pricing table is `$ —`. Day-in-the-life timestamps are invented. Two candidate emails (office@thedawghousepetresort vs dawghousegroom@gmail) — pick one.</div>
+        <a class="view" href="businesses/the-dawg-house/index.html">View Demo →</a>
+      </div></div>
 
     </div>
 
-    <!-- SMALL BUSINESSES -->
-    <div class="divider"></div>
-    <h2>Small Businesses — 11 Demos</h2>
-    <p class="section-intro">Showing 5 deployed. 6 pending deployment.</p>
-    <div class="grid">
-
-      <!-- Mr. Haircut -->
-      <div class="card hot-card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag hot">🔥 Hot Lead</span>
-            <span class="tag">Legacy Barbershop</span>
-            <span class="tag platform">Wix (broken)</span>
-          </div>
-          <h3>Mr. Haircut Athens</h3>
-          <div class="current-site">Live: <a href="https://mrhaircut.wixsite.com/mrhaircut" target="_blank">mrhaircut.wixsite.com</a> — "Website Under Construction" since at least 2016</div>
-        </div>
-        <div class="card-body">
-          <p>1968, downtown Athens landmark on Broad and Jackson. Paying ~$20/mo for a Wix site that literally says "Website Under Construction." Booking goes through Fresha — not their site.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>A website that matches a 57-year reputation. Direct booking or clear call to action. First impression for every new UGA student.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="businesses/mr-haircut-athens/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://mrhaircut.wixsite.com/mrhaircut" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <!-- Community -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Sustainable Boutique</span>
-            <span class="tag platform">Custom (HTTP)</span>
-          </div>
-          <h3>Community — Athens</h3>
-          <div class="current-site">Live: <a href="http://www.shopcommunityathens.com" target="_blank">shopcommunityathens.com</a> — HTTP, generic presentation, no ecommerce</div>
-        </div>
-        <div class="card-body">
-          <p>Sustainable fashion boutique and sewing studio. Great concept, but the current site undersells the in-store magic and has no real online shopping flow.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Modern product storytelling, vendor highlights, events, workshops, and ecommerce-ready merchandising.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="businesses/community-athens/index.html" class="btn-demo">View Demo →</a>
-          <a href="http://www.shopcommunityathens.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <!-- Bee's Knees -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Bakery / Gift Boutique</span>
-            <span class="tag platform">Basic HTML</span>
-          </div>
-          <h3>Bee's Knees Bakery & Gifts</h3>
-          <div class="current-site">Live: <a href="http://www.beeskneesbakeryandgifts.com" target="_blank">beeskneesbakeryandgifts.com</a> — text-heavy, email-order flow, no structured inquiry</div>
-        </div>
-        <div class="card-body">
-          <p>Custom cakes, cookies, cupcakes, and wedding work. Great product, but the site is basically a text flyer with an email address.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Custom cake inquiry flow, event/wedding credibility, seasonal gift guide, and cleaner product presentation.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="businesses/bees-knees-bakery-gifts/index.html" class="btn-demo">View Demo →</a>
-          <a href="http://www.beeskneesbakeryandgifts.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <!-- LMM -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Premium Detailing</span>
-            <span class="tag platform">Basic Site Builder</span>
-          </div>
-          <h3>LMM Detailing Services</h3>
-          <div class="current-site">Live: <a href="https://www.lmmdetailingsvcs.com" target="_blank">lmmdetailingsvcs.com</a> — generic branding, weak polish, typo-heavy copy</div>
-        </div>
-        <div class="card-body">
-          <p>Professional detailing in Athens. Service quality may be real, but the current site looks generic and doesn't build confidence fast enough.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Stronger premium trust, better quote funnel, service breakdowns, and before/after proof that actually sells.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="businesses/lmm-detailing-services/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.lmmdetailingsvcs.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <!-- The Dawg House -->
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row">
-            <span class="tag">Pet Care Campus</span>
-            <span class="tag platform">Custom PHP</span>
-          </div>
-          <h3>The Dawg House</h3>
-          <div class="current-site">Live: <a href="https://www.petboarddaycaregroomathens.com" target="_blank">petboarddaycaregroomathens.com</a> — long keyword-heavy domain, crowded service presentation</div>
-        </div>
-        <div class="card-body">
-          <p>Athens' oldest and largest pet boarding facility. Trusted operation, but the web presence feels cluttered and keyword-stuffed instead of warm and premium.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Clear boarding/daycare/grooming pathways, cleaner trust signals, and a friendlier pet-parent journey.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="businesses/the-dawg-house/index.html" class="btn-demo">View Demo →</a>
-          <a href="https://www.petboarddaycaregroomathens.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
+    <div class="stats">
+      <div class="stat"><strong>16</strong><span>Demos shipped</span></div>
+      <div class="stat"><strong>3</strong><span>Ready</span></div>
+      <div class="stat"><strong>10</strong><span>Review</span></div>
+      <div class="stat"><strong>3</strong><span>Blocked on decision</span></div>
     </div>
 
-    <div class="divider"></div>
-    <h2>Small Businesses — Pending Deployment</h2>
-    <p class="section-intro">Built locally, not yet pushed to Cloudflare Pages.</p>
-    <div class="grid">
-
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row"><span class="tag">Legacy Barbershop</span><span class="tag platform">Custom + Fresha</span></div>
-          <h3>Barbers &amp; the Salon</h3>
-          <div class="current-site">Live: <a href="http://www.barbersandthesalon.com" target="_blank">barbersandthesalon.com</a> — basic custom site, booking split away from brand</div>
-        </div>
-        <div class="card-body">
-          <p>Two Athens locations, solid reputation, but the website feels plain and doesn't unify both locations into one polished brand experience.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Cleaner two-location IA, stronger service differentiation, and easier booking handoff without losing trust.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn-pending">Demo Pending →</a>
-          <a href="http://www.barbersandthesalon.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row"><span class="tag">Bakery / Gift Boutique</span><span class="tag platform">Static HTML</span></div>
-          <h3>Black Forest German Bakery</h3>
-          <div class="current-site">Live: <a href="http://www.blackforestgermanbakery.com" target="_blank">blackforestgermanbakery.com</a> — very old static HTML</div>
-        </div>
-        <div class="card-body">
-          <p>Strong niche identity, almost no modern digital merchandising. The current site feels like a relic and doesn't sell the artisan angle.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Premium bakery storytelling, catering/events visibility, and product presentation that matches the niche quality.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn-pending">Demo Pending →</a>
-          <a href="http://www.blackforestgermanbakery.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row"><span class="tag">Pet Care Campus</span><span class="tag platform">Wix / Simple Builder</span></div>
-          <h3>Wags 'N' Whiskers Grooming</h3>
-          <div class="current-site">Live: <a href="https://www.wagsnwhiskersgrooming.com" target="_blank">wagsnwhiskersgrooming.com</a> — serviceable, but thin and generic</div>
-        </div>
-        <div class="card-body">
-          <p>The real differentiator is "home environment" and home visits. That's rare and valuable, but the current site doesn't dramatize it enough.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Positioning-led copy, warmth, trust, and clearer service paths that make the uniqueness obvious immediately.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn-pending">Demo Pending →</a>
-          <a href="https://www.wagsnwhiskersgrooming.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row"><span class="tag">Mobile Detailing</span><span class="tag platform">Custom Basic Site</span></div>
-          <h3>Hunt for Details</h3>
-          <div class="current-site">Live: <a href="https://www.huntfordetails.com" target="_blank">huntfordetails.com</a> — solid info, still visually plain</div>
-        </div>
-        <div class="card-body">
-          <p>Good operation, real professionalism, but the site doesn't visually earn premium pricing fast enough for cold traffic.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Higher-trust visual polish, stronger quote funnel, and better before/after sales framing for high-ticket detailing.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn-pending">Demo Pending →</a>
-          <a href="https://www.huntfordetails.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row"><span class="tag">Wellness / Professional</span><span class="tag platform">Medical Template</span></div>
-          <h3>Simpson Chiropractic Wellness &amp; Weight Loss</h3>
-          <div class="current-site">Live: <a href="https://www.chiropracticinathens.com" target="_blank">chiropracticinathens.com</a> — generic local-medical template</div>
-        </div>
-        <div class="card-body">
-          <p>Established practice with multiple service lines, but the current site reads like stock chiropractor SEO instead of a polished modern healthcare brand.</p>
-          <div class="win-box"><strong>New design wins:</strong><span>Cleaner patient journey, better intake flow, and stronger credibility for wellness, neuropathy, and weight loss services.</span></div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn-pending">Demo Pending →</a>
-          <a href="https://www.chiropracticinathens.com" target="_blank" class="btn-current">Current Site →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="tag-row"><span class="tag">Note</span><span class="tag platform">Pipeline Count</span></div>
-          <h3>Community Duplicate Check</h3>
-          <div class="current-site">The pipeline count lists Community twice, but only one sustainable boutique target has been confirmed.</div>
-        </div>
-        <div class="card-body">
-          <p>This is probably a duplicate in the running tally, not a second Athens business. Leaving it out of deploy keeps the gallery honest.</p>
-          <div class="win-box"><strong>Recommendation:</strong><span>Keep total built count in notes if needed, but don't display a second Community card unless there's actually another target.</span></div>
-        </div>
-        <div class="card-footer">
-          <span class="pending-note">No separate demo expected unless a second target is confirmed.</span>
-        </div>
-      </div>
-
-    </div>
-
-    <footer>ZMD TECH demo pipeline — built with Astro + Cloudflare Pages. Branding kept conservative during demo phase. Each card now includes the current site, current platform, and the specific business case for the redesign.</footer>
+    <footer>ZMD TECH demo pipeline — each site is a self-contained static bundle ready to extract into its own repo + Cloudflare Pages deployment. Universal follow-ups (photos, Google Maps embeds, form backends) apply to every site and are tracked per-folder in <code>ASSETS.md</code>.</footer>
   </div>
 </body>
 </html>

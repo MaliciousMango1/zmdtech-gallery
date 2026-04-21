@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events &amp; Private Dining — George's Lowcountry Table</title>
+  <meta name="description" content="Rehearsal dinners, private dining, and catering by George's Lowcountry Table. Private room for up to 40. Full-service catering in Athens, GA." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand-mark" href="index.html">
+        <span class="mark-name">George's Lowcountry Table</span>
+        <span class="mark-sub">Athens GA &middot; Est. 2016</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="events.html" class="active">Events</a>
+        <a href="visit.html">Visit</a>
+      </nav>
+      <a class="nav-reserve" href="https://resy.com/cities/athens-ga/venues/georges-lowcountry-table" target="_blank" rel="noopener">Reserve</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-masthead">
+      <div class="container">
+        <span class="eyebrow">Private dining &amp; events</span>
+        <h1>Rehearsal dinners, tailgates, <em>and the occasions that deserve a room.</em></h1>
+        <p class="lede">Our private dining room seats up to forty for a sit-down meal. The food comes out of the same kitchen as the main room, drawn from the same board; we just build the menu a little ahead of time so everyone eats together. Tell us what the night is for, and we'll cook toward that.</p>
+      </div>
+    </section>
+
+    <section class="events-overview">
+      <div class="container">
+        <div class="events-grid">
+
+          <article class="event-block">
+            <h3>Rehearsal dinners</h3>
+            <p>Twenty to forty guests. A three-course menu we build with you the week before &mdash; often a raw bar to start, a choice of two mains, the bread pudding to end. Toasts welcome; we hand you the mic.</p>
+            <p>Full room with a short walk from the main dining room. Room fee waived at minimums.</p>
+            <span class="meta">Capacity &middot; up to 40</span>
+          </article>
+
+          <article class="event-block">
+            <h3>Private parties</h3>
+            <p>Birthdays, retirement dinners, anniversaries, the kind of Saturday that needs its own room. We can do a tasting menu, a plated course, or a family-style spread built around the boil. Wine list walked through in advance.</p>
+            <p>Typical buyout window: Tuesday through Thursday evenings or Sunday brunch service.</p>
+            <span class="meta">Capacity &middot; 20 &ndash; 40</span>
+          </article>
+
+          <article class="event-block">
+            <h3>Tailgates &amp; catering</h3>
+            <p>Full-service catering for gamedays, corporate lunches, tailgates on the lot, and off-premise events. Lowcountry boils in the tailgate pan, trays of shrimp and grits, jambalaya by the quart, desserts by the pan.</p>
+            <p>Two weeks' notice is kind to everyone; we can move faster when the calendar allows.</p>
+            <span class="meta">Off-premise &middot; by quote</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="inquiry" id="inquire">
+      <div class="container inquiry-inner">
+        <div class="inquiry-head">
+          <span class="eyebrow">Start a conversation</span>
+          <h2>Tell us about the night you have in mind.</h2>
+        </div>
+
+        <form class="event-form" onsubmit="event.preventDefault(); alert('Thank you. We will reply within one business day to the email you provided. (This is a demo form — wire up the mail handler before going live.)'); this.reset();">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" />
+            </div>
+            <div class="field">
+              <label for="type">Event type</label>
+              <select id="type" name="type">
+                <option>Rehearsal dinner</option>
+                <option>Private party</option>
+                <option>Tailgate / catering</option>
+                <option>Corporate</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="date">Preferred date</label>
+              <input id="date" name="date" type="date" />
+            </div>
+            <div class="field">
+              <label for="count">Guest count</label>
+              <input id="count" name="count" type="number" min="1" max="120" placeholder="Approximate" />
+            </div>
+            <div class="field full">
+              <label for="notes">What are we celebrating?</label>
+              <textarea id="notes" name="notes" placeholder="Any allergies, preferences, or a favorite dish we should build around."></textarea>
+            </div>
+          </div>
+          <div class="form-submit">
+            <button class="submit-btn" type="submit">Send inquiry</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="visit-strip">
+      <div class="container visit-strip-inner">
+        <div class="visit-cell">
+          <span class="smallcaps">Or call</span>
+          <div class="val"><a href="tel:+17065483359">(706) 548-3359</a></div>
+        </div>
+        <div class="visit-cell">
+          <span class="smallcaps">Email</span>
+          <div class="val"><a href="mailto:events@georgeslowcountrytable.com">events@georgeslowcountrytable.com</a></div>
+        </div>
+        <div class="visit-cell">
+          <span class="smallcaps">Visit</span>
+          <div class="val">420 Macon Hwy<br />Athens, GA 30606</div>
+        </div>
+        <div class="visit-cell">
+          <span class="smallcaps">Reserve the main room</span>
+          <div class="val"><a href="https://resy.com/cities/athens-ga/venues/georges-lowcountry-table" target="_blank" rel="noopener">Resy &rarr;</a></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="f-name">George's Lowcountry Table</span>
+          <p class="f-tag">A coastal seafood table on Macon Highway. Named for George Davis, who taught a generation of Athens cooks what a plate could be.</p>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <ul class="footer-list">
+            <li>420 Macon Hwy</li>
+            <li>Athens, GA 30606</li>
+            <li><a href="tel:+17065483359">(706) 548-3359</a></li>
+            <li><a href="mailto:info@georgeslowcountrytable.com">info@georgeslowcountrytable.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Read</h4>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="visit.html">Visit</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <ul class="footer-list">
+            <li><a href="https://resy.com/cities/athens-ga/venues/georges-lowcountry-table" target="_blank" rel="noopener">Reserve on Resy</a></li>
+            <li><a href="https://www.instagram.com/georgeslowcountry/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/georgeslowcountry/" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 George's Lowcountry Table. Named for George Davis.</span>
+        <span>Site by <a href="#">ZMD TECH</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
